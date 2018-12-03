@@ -1,0 +1,30 @@
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Negocio\bin\Debug\Negocio.dll.config
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Negocio\bin\Debug\Negocio.dll
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Negocio\bin\Debug\Negocio.pdb
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Negocio\bin\Debug\Datos.dll
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Negocio\bin\Debug\Entidades.dll
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Negocio\bin\Debug\Oracle.ManagedDataAccess.dll
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Negocio\bin\Debug\Datos.pdb
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Negocio\bin\Debug\Datos.dll.config
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Negocio\bin\Debug\Entidades.pdb
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Negocio\bin\Debug\Entidades.dll.config
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Negocio\obj\Debug\Negocio.dll
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Negocio\obj\Debug\Negocio.pdb
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Negocio\obj\Debug\Negocio.dll
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Negocio\obj\Debug\Negocio.pdb
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Negocio\bin\Debug\Negocio.dll.config
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Negocio\bin\Debug\Negocio.dll
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Negocio\bin\Debug\Negocio.pdb
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Negocio\bin\Debug\Datos.dll
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Negocio\bin\Debug\Entidades.dll
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Negocio\bin\Debug\Oracle.ManagedDataAccess.dll
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Negocio\bin\Debug\Datos.pdb
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Negocio\bin\Debug\Datos.dll.config
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Negocio\bin\Debug\Entidades.pdb
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Negocio\bin\Debug\Entidades.dll.config
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Negocio\obj\Debug\Negocio.csproj.CopyComplete

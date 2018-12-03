@@ -1,0 +1,43 @@
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\bin\Debug\Presentacion.exe.config
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\bin\Debug\Presentacion.exe
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\bin\Debug\Presentacion.pdb
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\bin\Debug\Entidades.dll
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\bin\Debug\Negocio.dll
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\bin\Debug\Datos.dll
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\bin\Debug\Oracle.ManagedDataAccess.dll
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\bin\Debug\Entidades.pdb
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\bin\Debug\Entidades.dll.config
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\bin\Debug\Negocio.pdb
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\bin\Debug\Negocio.dll.config
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\bin\Debug\Datos.pdb
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\bin\Debug\Datos.dll.config
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\obj\Debug\Presentacion.csprojAssemblyReference.cache
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\obj\Debug\Presentacion.csproj.CopyComplete
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\obj\Debug\Presentacion.exe
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\obj\Debug\Presentacion.pdb
+E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\obj\Debug\Presentacion.Form1.resources
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\obj\Debug\Presentacion.csprojAssemblyReference.cache
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\obj\Debug\Presentacion.FormLogin.resources
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\obj\Debug\Presentacion.exe
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\obj\Debug\Presentacion.pdb
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\obj\Debug\Presentacion.AboutBox1.resources
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\bin\Debug\Presentacion.exe.config
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\bin\Debug\Presentacion.exe
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\bin\Debug\Presentacion.pdb
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\bin\Debug\Entidades.dll
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\bin\Debug\Negocio.dll
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\bin\Debug\Datos.dll
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\bin\Debug\Oracle.ManagedDataAccess.dll
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\bin\Debug\Entidades.pdb
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\bin\Debug\Entidades.dll.config
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\bin\Debug\Negocio.pdb
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\bin\Debug\Negocio.dll.config
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\bin\Debug\Datos.pdb
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\bin\Debug\Datos.dll.config
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Presentacion\obj\Debug\Presentacion.csproj.CopyComplete

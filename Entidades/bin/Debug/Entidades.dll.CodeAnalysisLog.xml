@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="e:\program files (x86)\microsoft visual studio\2017\enterprise\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="15.0">
+ <Targets>
+  <Target Name="E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Entidades\bin\Debug\Entidades.dll">
+   <Modules>
+    <Module Name="entidades.dll">
+     <Namespaces>
+      <Namespace Name="Entidades">
+       <Types>
+        <Type Name="Equipo" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Finalize()" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RemoveEmptyFinalizers" Category="Microsoft.Performance" CheckId="CA1821" Status="ExcludedInSource" Created="2018-11-11 15:38:27Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Entidades" File="Equipo.cs" Line="142">'Equipo' implementa un finalizador que sólo llama condicionalmente a métodos emitidos o al finalizador del tipo base. Quite el finalizador o asegúrese de que sólo se compila condicionalmente en el ensamblado. Si se produce esta infracción con un finalizador que se incluye por completo en un bloque de código emitido condicionalmente, suprima este mensaje.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Rol" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Finalize()" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RemoveEmptyFinalizers" Category="Microsoft.Performance" CheckId="CA1821" Status="ExcludedInSource" Created="2018-11-11 15:38:27Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="E:\Users\Jota\Documents\2DAM\Desarrollo de Interfaces\Tema 7 - Examen primera evaluación\Pardines_Jose_Javier_POO\Entidades" File="Rol.cs" Line="66">'Rol' implementa un finalizador que sólo llama condicionalmente a métodos emitidos o al finalizador del tipo base. Quite el finalizador o asegúrese de que sólo se compila condicionalmente en el ensamblado. Si se produce esta infracción con un finalizador que se incluye por completo en un bloque de código emitido condicionalmente, suprima este mensaje.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="RemoveEmptyFinalizers" Category="Microsoft.Performance" CheckId="CA1821">
+   <Name>Quitar los finalizadores vacíos</Name>
+   <Description>Los finalizadores vacíos se deberían evitar cuando sea posible, con el fin de ahorrar el esfuerzo de rendimiento adicional que implica el seguimiento de la duración de los objetos.</Description>
+   <Resolution Name="Default">{0} implementa un finalizador que sólo llama condicionalmente a métodos emitidos o al finalizador del tipo base. Quite el finalizador o asegúrese de que sólo se compila condicionalmente en el ensamblado. Si se produce esta infracción con un finalizador que se incluye por completo en un bloque de código emitido condicionalmente, suprima este mensaje.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb264476.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="15.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Categoría</String>
+  <String Key="Certainty">Certeza</String>
+  <String Key="CollapseAll">Contraer todo</String>
+  <String Key="CheckId">Comprobar id.</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">errores</String>
+  <String Key="ExpandAll">Expandir todo</String>
+  <String Key="Help">Ayuda</String>
+  <String Key="Line">Línea</String>
+  <String Key="Messages">mensajes</String>
+  <String Key="LocationNotStoredInPdb">[Ubicación no almacenada en Pdb]</String>
+  <String Key="Project">Proyecto</String>
+  <String Key="Resolution">Resolución</String>
+  <String Key="Rule">Regla</String>
+  <String Key="RuleFile">Archivo de regla</String>
+  <String Key="RuleDescription">Descripción de la regla</String>
+  <String Key="Source">Origen</String>
+  <String Key="Status">Estado</String>
+  <String Key="Target">Círculos concéntricos</String>
+  <String Key="Warning">Advertencia</String>
+  <String Key="Warnings">advertencias</String>
+  <String Key="ReportTitle">Informe de análisis del código</String>
+ </Localized>
+</FxCopReport>
