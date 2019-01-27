@@ -114,7 +114,7 @@
             this.MaximizeBox = false;
             this.Name = "formLogin";
             this.ShowIcon = false;
-            this.Text = "LOGIN";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.FormLogin_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

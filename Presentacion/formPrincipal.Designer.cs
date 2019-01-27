@@ -109,21 +109,23 @@
             // msFormPrincipalUsuariosInsertar
             // 
             this.msFormPrincipalUsuariosInsertar.Name = "msFormPrincipalUsuariosInsertar";
-            this.msFormPrincipalUsuariosInsertar.Size = new System.Drawing.Size(125, 22);
+            this.msFormPrincipalUsuariosInsertar.Size = new System.Drawing.Size(180, 22);
             this.msFormPrincipalUsuariosInsertar.Text = "Insertar";
             this.msFormPrincipalUsuariosInsertar.Click += new System.EventHandler(this.msFormPrincipalUsuariosInsertar_Click);
             // 
             // modificarToolStripMenuItem
             // 
             this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modificarToolStripMenuItem.Text = "Modificar";
+            this.modificarToolStripMenuItem.Click += new System.EventHandler(this.modificarToolStripMenuItem_Click);
             // 
             // eliminarToolStripMenuItem
             // 
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
             // jugadoresToolStripMenuItem
             // 
@@ -255,7 +257,7 @@
             this.MaximumSize = new System.Drawing.Size(1280, 1024);
             this.MinimumSize = new System.Drawing.Size(1280, 1024);
             this.Name = "formPrincipal";
-            this.Text = "FormPrincipal";
+            this.Text = "Mundial";
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.msFormPrincipal.ResumeLayout(false);
             this.msFormPrincipal.PerformLayout();

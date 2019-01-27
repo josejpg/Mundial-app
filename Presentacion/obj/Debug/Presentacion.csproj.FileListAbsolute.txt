@@ -67,3 +67,5 @@ E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Mundial-app\
 E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Mundial-app\Presentacion\obj\Debug\Presentacion.formAnyoMundial.resources
 E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Mundial-app\Presentacion\obj\Debug\Presentacion.formPrincipal.resources
 E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Mundial-app\Presentacion\obj\Debug\Presentacion.formInsertarUsuario.resources
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Mundial-app\Presentacion\obj\Debug\Presentacion.formModificarUsuario.resources
+E:\Users\Jota\Documents\2DAM\DI\Tema 7 - Examen primera evaluación\Mundial-app\Presentacion\obj\Debug\Presentacion.formEliminarUsuario.resources

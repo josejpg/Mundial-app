@@ -26,8 +26,7 @@ namespace Negocio
             List<Entidades.Rol> _listRoles = new List<Entidades.Rol>();
             try
             {
-                Datos.Rol _rol = new Datos.Rol();
-                _listRoles = _rol.getRoles();
+                _listRoles = new Datos.Rol().getRoles();
             }
             catch(InvalidOperationException e)
             {
@@ -54,8 +53,7 @@ namespace Negocio
             List<Entidades.Usuario> _listUsuarios = new List<Entidades.Usuario>();
             try
             {
-                Datos.Usuario _usuario = new Datos.Usuario();
-                _listUsuarios = _usuario.getUsuarios();
+                _listUsuarios = new Datos.Usuario().getUsuarios();
             }
             catch (InvalidOperationException e)
             {
@@ -70,6 +68,34 @@ namespace Negocio
                 MessageBox.Show(e.ToString());
             }
             return _listUsuarios;
+        }
+
+
+        /// <summary>
+        /// Obtiene y devuelve el listado de usuarios de la app
+        /// haciendo de intermediario entre la capa Datos y Presentación
+        /// </summary>
+        /// <returns></returns>
+        public Entidades.Usuario getUsuarioById(int idUser)
+        {
+            Entidades.Usuario datosUser = new Entidades.Usuario();
+            try
+            {
+                datosUser = new Datos.Usuario().getUsuarioById(idUser);
+            }
+            catch (InvalidOperationException e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+            catch (ApplicationException e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+            catch (Oracle.ManagedDataAccess.Client.OracleException e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+            return datosUser;
         }
 
         /// <summary>

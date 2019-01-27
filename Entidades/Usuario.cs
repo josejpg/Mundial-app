@@ -18,7 +18,6 @@ namespace Entidades
         public int idUser { get; set; }
         public string nick { get; set; }
         public string psw { get; set; }
-        public string psw2 { get; set; }
         public string email { get; set; }
         public string name { get; set; }
         public string surname { get; set; }
@@ -36,7 +35,6 @@ namespace Entidades
         /// </summary>
         /// <param name="nick"></param>
         /// <param name="psw"></param>
-        /// <param name="psw2"></param>
         /// <param name="email"></param>
         /// <param name="name"></param>
         /// <param name="surname"></param>
@@ -73,7 +71,6 @@ namespace Entidades
             this.idUser = previousUsuario.idUser;
             this.nick = previousUsuario.nick;
             this.psw = previousUsuario.psw;
-            this.psw2 = previousUsuario.psw2;
             this.email = previousUsuario.email;
             this.name = previousUsuario.name;
             this.surname = previousUsuario.surname;
@@ -89,7 +86,6 @@ namespace Entidades
             this.avatar = null;
             this.nick = "";
             this.psw = "";
-            this.psw2 = "";
             this.email = "";
             this.name = "";
             this.surname = "";

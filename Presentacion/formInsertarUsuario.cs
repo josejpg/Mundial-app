@@ -24,8 +24,7 @@ namespace Presentacion
 
         private void setRoles()
         {
-            Negocio.Mundial _mundial = new Negocio.Mundial();
-            aRoles = _mundial.getRoles();
+            aRoles = mundial.getRoles();
             foreach ( var i in aRoles)
             {
                 cbRol.Items.Add(i.descRol);
@@ -129,8 +128,6 @@ namespace Presentacion
 
         private void openDialogImage()
         {
-            Stream fileContent;
-
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.InitialDirectory = "c:\\";
@@ -140,10 +137,7 @@ namespace Presentacion
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-
                     var fileStream = openFileDialog.OpenFile();
-
-                    fileContent = fileStream;
                     pbAvatar.Image = System.Drawing.Image.FromStream(fileStream);
                     pbAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
                 }

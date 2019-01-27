@@ -1,6 +1,6 @@
 ﻿namespace Presentacion
 {
-    partial class formModificarUsuario
+    partial class formEliminarUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -38,7 +38,6 @@
             this.pbAvatar = new System.Windows.Forms.PictureBox();
             this.txtNick = new System.Windows.Forms.Label();
             this.txtErrorSurname = new System.Windows.Forms.Label();
-            this.btnAvatar = new System.Windows.Forms.Button();
             this.txtErrorName = new System.Windows.Forms.Label();
             this.txtErrorNick = new System.Windows.Forms.Label();
             this.txtErrorEmail = new System.Windows.Forms.Label();
@@ -57,11 +56,11 @@
             // 
             this.dgUsers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgUsers.Location = new System.Drawing.Point(13, 13);
+            this.dgUsers.Location = new System.Drawing.Point(12, 12);
             this.dgUsers.Name = "dgUsers";
             this.dgUsers.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dgUsers.Size = new System.Drawing.Size(610, 960);
-            this.dgUsers.TabIndex = 0;
+            this.dgUsers.TabIndex = 1;
             this.dgUsers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUsers_CellClick);
             // 
             // gbDatosUsuario
@@ -75,7 +74,6 @@
             this.gbDatosUsuario.Controls.Add(this.pbAvatar);
             this.gbDatosUsuario.Controls.Add(this.txtNick);
             this.gbDatosUsuario.Controls.Add(this.txtErrorSurname);
-            this.gbDatosUsuario.Controls.Add(this.btnAvatar);
             this.gbDatosUsuario.Controls.Add(this.txtErrorName);
             this.gbDatosUsuario.Controls.Add(this.txtErrorNick);
             this.gbDatosUsuario.Controls.Add(this.txtErrorEmail);
@@ -88,7 +86,7 @@
             this.gbDatosUsuario.Location = new System.Drawing.Point(629, 13);
             this.gbDatosUsuario.Name = "gbDatosUsuario";
             this.gbDatosUsuario.Size = new System.Drawing.Size(623, 960);
-            this.gbDatosUsuario.TabIndex = 1;
+            this.gbDatosUsuario.TabIndex = 2;
             this.gbDatosUsuario.TabStop = false;
             this.gbDatosUsuario.Text = "Dato Usuario";
             this.gbDatosUsuario.Visible = false;
@@ -96,7 +94,7 @@
             // cbRol
             // 
             this.cbRol.FormattingEnabled = true;
-            this.cbRol.Location = new System.Drawing.Point(281, 645);
+            this.cbRol.Location = new System.Drawing.Point(281, 567);
             this.cbRol.Name = "cbRol";
             this.cbRol.Size = new System.Drawing.Size(168, 21);
             this.cbRol.TabIndex = 40;
@@ -104,7 +102,7 @@
             // cbActive
             // 
             this.cbActive.AutoSize = true;
-            this.cbActive.Location = new System.Drawing.Point(165, 703);
+            this.cbActive.Location = new System.Drawing.Point(165, 625);
             this.cbActive.Name = "cbActive";
             this.cbActive.Size = new System.Drawing.Size(56, 17);
             this.cbActive.TabIndex = 42;
@@ -113,18 +111,18 @@
             // 
             // btnSendForm
             // 
-            this.btnSendForm.Location = new System.Drawing.Point(165, 794);
+            this.btnSendForm.Location = new System.Drawing.Point(165, 716);
             this.btnSendForm.Name = "btnSendForm";
             this.btnSendForm.Size = new System.Drawing.Size(284, 23);
             this.btnSendForm.TabIndex = 43;
-            this.btnSendForm.Text = "Enviar";
+            this.btnSendForm.Text = "Eliminar";
             this.btnSendForm.UseVisualStyleBackColor = true;
             this.btnSendForm.Click += new System.EventHandler(this.btnSendForm_Click);
             // 
             // txtRol
             // 
             this.txtRol.AutoSize = true;
-            this.txtRol.Location = new System.Drawing.Point(162, 648);
+            this.txtRol.Location = new System.Drawing.Point(162, 570);
             this.txtRol.Name = "txtRol";
             this.txtRol.Size = new System.Drawing.Size(23, 13);
             this.txtRol.TabIndex = 45;
@@ -132,7 +130,7 @@
             // 
             // tbNick
             // 
-            this.tbNick.Location = new System.Drawing.Point(281, 352);
+            this.tbNick.Location = new System.Drawing.Point(281, 274);
             this.tbNick.Name = "tbNick";
             this.tbNick.ShortcutsEnabled = false;
             this.tbNick.Size = new System.Drawing.Size(168, 20);
@@ -150,12 +148,11 @@
             this.pbAvatar.Size = new System.Drawing.Size(260, 203);
             this.pbAvatar.TabIndex = 35;
             this.pbAvatar.TabStop = false;
-            this.pbAvatar.Click += new System.EventHandler(this.pbAvatar_Click);
             // 
             // txtNick
             // 
             this.txtNick.AutoSize = true;
-            this.txtNick.Location = new System.Drawing.Point(162, 355);
+            this.txtNick.Location = new System.Drawing.Point(162, 277);
             this.txtNick.Name = "txtNick";
             this.txtNick.Size = new System.Drawing.Size(29, 13);
             this.txtNick.TabIndex = 22;
@@ -165,28 +162,18 @@
             // 
             this.txtErrorSurname.AutoSize = true;
             this.txtErrorSurname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtErrorSurname.Location = new System.Drawing.Point(268, 596);
+            this.txtErrorSurname.Location = new System.Drawing.Point(268, 518);
             this.txtErrorSurname.Name = "txtErrorSurname";
             this.txtErrorSurname.Size = new System.Drawing.Size(200, 13);
             this.txtErrorSurname.TabIndex = 39;
             this.txtErrorSurname.Text = "No puede ser de más de 150 caracteres.";
             this.txtErrorSurname.Visible = false;
             // 
-            // btnAvatar
-            // 
-            this.btnAvatar.Location = new System.Drawing.Point(165, 267);
-            this.btnAvatar.Name = "btnAvatar";
-            this.btnAvatar.Size = new System.Drawing.Size(284, 23);
-            this.btnAvatar.TabIndex = 33;
-            this.btnAvatar.Text = "Seleccionar avatar";
-            this.btnAvatar.UseVisualStyleBackColor = true;
-            this.btnAvatar.Click += new System.EventHandler(this.btnAvatar_Click);
-            // 
             // txtErrorName
             // 
             this.txtErrorName.AutoSize = true;
             this.txtErrorName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtErrorName.Location = new System.Drawing.Point(268, 526);
+            this.txtErrorName.Location = new System.Drawing.Point(268, 448);
             this.txtErrorName.Name = "txtErrorName";
             this.txtErrorName.Size = new System.Drawing.Size(194, 13);
             this.txtErrorName.TabIndex = 38;
@@ -197,7 +184,7 @@
             // 
             this.txtErrorNick.AutoSize = true;
             this.txtErrorNick.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtErrorNick.Location = new System.Drawing.Point(268, 375);
+            this.txtErrorNick.Location = new System.Drawing.Point(268, 297);
             this.txtErrorNick.Name = "txtErrorNick";
             this.txtErrorNick.Size = new System.Drawing.Size(194, 13);
             this.txtErrorNick.TabIndex = 36;
@@ -208,7 +195,7 @@
             // 
             this.txtErrorEmail.AutoSize = true;
             this.txtErrorEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtErrorEmail.Location = new System.Drawing.Point(268, 448);
+            this.txtErrorEmail.Location = new System.Drawing.Point(268, 370);
             this.txtErrorEmail.Name = "txtErrorEmail";
             this.txtErrorEmail.Size = new System.Drawing.Size(200, 13);
             this.txtErrorEmail.TabIndex = 37;
@@ -218,7 +205,7 @@
             // txtEmail
             // 
             this.txtEmail.AutoSize = true;
-            this.txtEmail.Location = new System.Drawing.Point(162, 428);
+            this.txtEmail.Location = new System.Drawing.Point(162, 350);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(32, 13);
             this.txtEmail.TabIndex = 31;
@@ -226,14 +213,14 @@
             // 
             // tbEmail
             // 
-            this.tbEmail.Location = new System.Drawing.Point(281, 425);
+            this.tbEmail.Location = new System.Drawing.Point(281, 347);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(168, 20);
             this.tbEmail.TabIndex = 26;
             // 
             // tbSurname
             // 
-            this.tbSurname.Location = new System.Drawing.Point(281, 573);
+            this.tbSurname.Location = new System.Drawing.Point(281, 495);
             this.tbSurname.Name = "tbSurname";
             this.tbSurname.Size = new System.Drawing.Size(168, 20);
             this.tbSurname.TabIndex = 30;
@@ -241,7 +228,7 @@
             // txtSurname
             // 
             this.txtSurname.AutoSize = true;
-            this.txtSurname.Location = new System.Drawing.Point(162, 576);
+            this.txtSurname.Location = new System.Drawing.Point(162, 498);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(49, 13);
             this.txtSurname.TabIndex = 34;
@@ -249,7 +236,7 @@
             // 
             // tbName
             // 
-            this.tbName.Location = new System.Drawing.Point(281, 503);
+            this.tbName.Location = new System.Drawing.Point(281, 425);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(168, 20);
             this.tbName.TabIndex = 29;
@@ -257,13 +244,13 @@
             // txtName
             // 
             this.txtName.AutoSize = true;
-            this.txtName.Location = new System.Drawing.Point(162, 506);
+            this.txtName.Location = new System.Drawing.Point(162, 428);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(44, 13);
             this.txtName.TabIndex = 32;
             this.txtName.Text = "Nombre";
             // 
-            // formModificarUsuario
+            // formEliminarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -272,8 +259,8 @@
             this.Controls.Add(this.dgUsers);
             this.MaximumSize = new System.Drawing.Size(1280, 1024);
             this.MinimumSize = new System.Drawing.Size(1280, 1024);
-            this.Name = "formModificarUsuario";
-            this.Text = "Modificar Usuario";
+            this.Name = "formEliminarUsuario";
+            this.Text = "formEliminarUsuario";
             ((System.ComponentModel.ISupportInitialize)(this.dgUsers)).EndInit();
             this.gbDatosUsuario.ResumeLayout(false);
             this.gbDatosUsuario.PerformLayout();
@@ -286,11 +273,14 @@
 
         private System.Windows.Forms.DataGridView dgUsers;
         private System.Windows.Forms.GroupBox gbDatosUsuario;
+        private System.Windows.Forms.ComboBox cbRol;
+        private System.Windows.Forms.CheckBox cbActive;
+        private System.Windows.Forms.Button btnSendForm;
+        private System.Windows.Forms.Label txtRol;
         private System.Windows.Forms.TextBox tbNick;
         private System.Windows.Forms.PictureBox pbAvatar;
         private System.Windows.Forms.Label txtNick;
         private System.Windows.Forms.Label txtErrorSurname;
-        private System.Windows.Forms.Button btnAvatar;
         private System.Windows.Forms.Label txtErrorName;
         private System.Windows.Forms.Label txtErrorNick;
         private System.Windows.Forms.Label txtErrorEmail;
@@ -300,9 +290,5 @@
         private System.Windows.Forms.Label txtSurname;
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.Label txtName;
-        private System.Windows.Forms.ComboBox cbRol;
-        private System.Windows.Forms.CheckBox cbActive;
-        private System.Windows.Forms.Button btnSendForm;
-        private System.Windows.Forms.Label txtRol;
     }
 }

@@ -52,12 +52,12 @@
             this.txtErrorStartDate = new System.Windows.Forms.Label();
             this.btnSendForm = new System.Windows.Forms.Button();
             this.btnAvatar = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbDatosUsuario = new System.Windows.Forms.GroupBox();
             this.pbAvatar = new System.Windows.Forms.PictureBox();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gbDatosRegistro = new System.Windows.Forms.GroupBox();
+            this.gbDatosUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
+            this.gbDatosRegistro.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtNick
@@ -282,50 +282,33 @@
             this.btnAvatar.UseVisualStyleBackColor = true;
             this.btnAvatar.Click += new System.EventHandler(this.btnAvatar_Click);
             // 
-            // groupBox1
+            // gbDatosUsuario
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox1.Controls.Add(this.tbNick);
-            this.groupBox1.Controls.Add(this.pbAvatar);
-            this.groupBox1.Controls.Add(this.txtNick);
-            this.groupBox1.Controls.Add(this.txtErrorSurname);
-            this.groupBox1.Controls.Add(this.btnAvatar);
-            this.groupBox1.Controls.Add(this.txtErrorName);
-            this.groupBox1.Controls.Add(this.txtErrorNick);
-            this.groupBox1.Controls.Add(this.txtErrorEmail);
-            this.groupBox1.Controls.Add(this.txtEmail);
-            this.groupBox1.Controls.Add(this.tbEmail);
-            this.groupBox1.Controls.Add(this.txtPsw);
-            this.groupBox1.Controls.Add(this.txtPsw2);
-            this.groupBox1.Controls.Add(this.tbSurname);
-            this.groupBox1.Controls.Add(this.tbPsw);
-            this.groupBox1.Controls.Add(this.txtSurname);
-            this.groupBox1.Controls.Add(this.tbPsw2);
-            this.groupBox1.Controls.Add(this.tbName);
-            this.groupBox1.Controls.Add(this.txtName);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(581, 864);
-            this.groupBox1.TabIndex = 23;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos Usuario";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox2.Controls.Add(this.cbRol);
-            this.groupBox2.Controls.Add(this.dtpStartDate);
-            this.groupBox2.Controls.Add(this.cbActive);
-            this.groupBox2.Controls.Add(this.txtStartDate);
-            this.groupBox2.Controls.Add(this.btnSendForm);
-            this.groupBox2.Controls.Add(this.txtErrorStartDate);
-            this.groupBox2.Controls.Add(this.txtRol);
-            this.groupBox2.Location = new System.Drawing.Point(670, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(557, 290);
-            this.groupBox2.TabIndex = 24;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Datos Registro";
+            this.gbDatosUsuario.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gbDatosUsuario.Controls.Add(this.tbNick);
+            this.gbDatosUsuario.Controls.Add(this.pbAvatar);
+            this.gbDatosUsuario.Controls.Add(this.txtNick);
+            this.gbDatosUsuario.Controls.Add(this.txtErrorSurname);
+            this.gbDatosUsuario.Controls.Add(this.btnAvatar);
+            this.gbDatosUsuario.Controls.Add(this.txtErrorName);
+            this.gbDatosUsuario.Controls.Add(this.txtErrorNick);
+            this.gbDatosUsuario.Controls.Add(this.txtErrorEmail);
+            this.gbDatosUsuario.Controls.Add(this.txtEmail);
+            this.gbDatosUsuario.Controls.Add(this.tbEmail);
+            this.gbDatosUsuario.Controls.Add(this.txtPsw);
+            this.gbDatosUsuario.Controls.Add(this.txtPsw2);
+            this.gbDatosUsuario.Controls.Add(this.tbSurname);
+            this.gbDatosUsuario.Controls.Add(this.tbPsw);
+            this.gbDatosUsuario.Controls.Add(this.txtSurname);
+            this.gbDatosUsuario.Controls.Add(this.tbPsw2);
+            this.gbDatosUsuario.Controls.Add(this.tbName);
+            this.gbDatosUsuario.Controls.Add(this.txtName);
+            this.gbDatosUsuario.Location = new System.Drawing.Point(12, 12);
+            this.gbDatosUsuario.Name = "gbDatosUsuario";
+            this.gbDatosUsuario.Size = new System.Drawing.Size(581, 864);
+            this.gbDatosUsuario.TabIndex = 23;
+            this.gbDatosUsuario.TabStop = false;
+            this.gbDatosUsuario.Text = "Datos Usuario";
             // 
             // pbAvatar
             // 
@@ -341,22 +324,39 @@
             this.pbAvatar.TabStop = false;
             this.pbAvatar.Click += new System.EventHandler(this.pbAvatar_Click);
             // 
+            // gbDatosRegistro
+            // 
+            this.gbDatosRegistro.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gbDatosRegistro.Controls.Add(this.cbRol);
+            this.gbDatosRegistro.Controls.Add(this.dtpStartDate);
+            this.gbDatosRegistro.Controls.Add(this.cbActive);
+            this.gbDatosRegistro.Controls.Add(this.txtStartDate);
+            this.gbDatosRegistro.Controls.Add(this.btnSendForm);
+            this.gbDatosRegistro.Controls.Add(this.txtErrorStartDate);
+            this.gbDatosRegistro.Controls.Add(this.txtRol);
+            this.gbDatosRegistro.Location = new System.Drawing.Point(670, 12);
+            this.gbDatosRegistro.Name = "gbDatosRegistro";
+            this.gbDatosRegistro.Size = new System.Drawing.Size(557, 290);
+            this.gbDatosRegistro.TabIndex = 24;
+            this.gbDatosRegistro.TabStop = false;
+            this.gbDatosRegistro.Text = "Datos Registro";
+            // 
             // formInsertarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 985);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbDatosRegistro);
+            this.Controls.Add(this.gbDatosUsuario);
             this.MaximumSize = new System.Drawing.Size(1280, 1024);
             this.MinimumSize = new System.Drawing.Size(1280, 1024);
             this.Name = "formInsertarUsuario";
-            this.Text = "Insertar Usuarios";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.Text = "Insertar Usuario";
+            this.gbDatosUsuario.ResumeLayout(false);
+            this.gbDatosUsuario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).EndInit();
+            this.gbDatosRegistro.ResumeLayout(false);
+            this.gbDatosRegistro.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -388,7 +388,7 @@
         private System.Windows.Forms.Label txtErrorStartDate;
         private System.Windows.Forms.Button btnSendForm;
         private System.Windows.Forms.Button btnAvatar;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbDatosUsuario;
+        private System.Windows.Forms.GroupBox gbDatosRegistro;
     }
 }

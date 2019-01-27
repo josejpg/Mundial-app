@@ -27,6 +27,7 @@ namespace Datos
         public List<Entidades.Usuario> getUsuarios()
         {
             List<Entidades.Usuario> _listUsuarios = new List<Entidades.Usuario>();
+            Entidades.Usuario datosUsuario = new Entidades.Usuario();
             DataBase _db = new DataBase();
             OracleDataReader _dataSQL;
             string _sql = @"SELECT 
@@ -37,8 +38,9 @@ namespace Datos
                                 NOMBRE_USUARIO_APP,
                                 APELLIDOS_USUARIO_APP,
                                 FECHA_ALTA_USUARIO_APP,
-                                ROL_USUARIO_APP
-                                ACTIVO_USUARIO_APP
+                                ROL_USUARIO_APP,
+                                ACTIVO_USUARIO_APP, 
+                                FOTO_USUARIO_APP
                             FROM USUARIO_APP";
 
             try
@@ -52,20 +54,20 @@ namespace Datos
                 // Llamar siempre a Read antes de acceder a los datos
                 while (_dataSQL.Read())
                 {
-                    _listUsuarios.Add(
-                        new Entidades.Usuario
-                        {
-                            idUser = int.Parse(_dataSQL[0].ToString()),
-                            nick = _dataSQL[1].ToString(),
-                            psw = _dataSQL[2].ToString(),
-                            email = _dataSQL[3].ToString(),
-                            name = _dataSQL[4].ToString(),
-                            surname = _dataSQL[5].ToString(),
-                            startDate = (DateTime)_dataSQL[6],
-                            idRol = int.Parse(_dataSQL[7].ToString()),
-                            active = _dataSQL[8].ToString()
-                        }
-                    );
+                    datosUsuario = new Entidades.Usuario
+                    {
+                        idUser = _dataSQL.GetInt32(0),
+                        nick = _dataSQL.GetString(1),
+                        psw = _dataSQL.GetString(2),
+                        email = _dataSQL.GetString(3),
+                        name = _dataSQL.GetString(4),
+                        surname = _dataSQL.GetString(5),
+                        startDate = _dataSQL.GetDateTime(6),
+                        idRol = _dataSQL.GetInt32(7),
+                        active = _dataSQL.GetString(8)
+                    };
+                    datosUsuario.avatar = (_dataSQL[9] is DBNull) ? null : (byte[])_dataSQL[9];
+                    _listUsuarios.Add(datosUsuario);
                 }
 
                 _dataSQL.Close();
@@ -83,6 +85,75 @@ namespace Datos
             return _listUsuarios;
 
         }
+
+        /// <summary>
+        /// Comprueba si los datos del usuario existen en la DB
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="psw"></param>
+        /// <returns></returns>
+        public Entidades.Usuario getUsuarioById(int idUser)
+        {
+            Entidades.Usuario datosUsuario = new Entidades.Usuario();
+            DataBase _db = new DataBase();
+            OracleDataReader _dataSQL;
+            string _sql = $@"SELECT 
+                                ID_USUARIO_APP,
+                                NICK_USUARIO_APP,
+                                CONTRASENYA_USUARIO_APP,
+                                EMAIL_USUARIO_APP,
+                                NOMBRE_USUARIO_APP,
+                                APELLIDOS_USUARIO_APP,
+                                FECHA_ALTA_USUARIO_APP,
+                                ROL_USUARIO_APP,
+                                ACTIVO_USUARIO_APP, 
+                                FOTO_USUARIO_APP
+                            FROM 
+                                USUARIO_APP
+                            WHERE
+                                ID_USUARIO_APP = '{ idUser }'";
+
+            try
+            {
+                _db.startDB();
+                _db.Sql = _db.DbConnection.CreateCommand();
+                _db.Sql.CommandType = CommandType.Text;
+                _db.Sql.CommandText = _sql;
+                _dataSQL = _db.selectSQL();
+
+
+                _dataSQL.Read();
+                datosUsuario = new Entidades.Usuario
+                {
+                    idUser = Convert.ToInt32(_dataSQL[0]),
+                    nick = _dataSQL[1].ToString(),
+                    psw = _dataSQL[2].ToString(),
+                    email = _dataSQL[3].ToString(),
+                    name = _dataSQL[4].ToString(),
+                    surname = _dataSQL[5].ToString(),
+                    startDate = (DateTime)_dataSQL[6],
+                    idRol = Convert.ToInt32(_dataSQL[7]),
+                    active = _dataSQL[8].ToString()
+                };
+                datosUsuario.avatar = (_dataSQL[9] is DBNull) ? null : (byte[])_dataSQL[9];
+                _dataSQL.Close();
+
+                _dataSQL.Close();
+                _dataSQL.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Error en compruebaLogin(): " + ex.Message);
+            }
+            finally
+            {
+                // Llamar siempre a Close una vez finalizada la lectura
+                _db.closeDB();
+            }
+            return datosUsuario;
+        }
+
         /// <summary>
         /// Comprueba si los datos del usuario existen en la DB
         /// </summary>
@@ -138,8 +209,7 @@ namespace Datos
                     idRol = Convert.ToInt32(_dataSQL[7]),
                     active = _dataSQL[8].ToString()
                 };
-
-                datosUsuario.avatar = ObjectToByteArray(_dataSQL[9]);
+                datosUsuario.avatar = (_dataSQL[9] is DBNull)?null:(byte[])_dataSQL[9];
                 _dataSQL.Close();
 
                 _dataSQL.Close();
@@ -176,7 +246,6 @@ namespace Datos
                 _sql = $@"UPDATE
                             USUARIO_APP
                         SET 
-                            CONTRASENYA_USUARIO_APP = :newPsw,
                             EMAIL_USUARIO_APP = :newEmail,
                             NOMBRE_USUARIO_APP = :newName,
                             APELLIDOS_USUARIO_APP = :newSurname,
@@ -189,7 +258,6 @@ namespace Datos
                 _db.Sql = _db.DbConnection.CreateCommand();
                 _db.Sql.CommandType = CommandType.Text;
                 _db.Sql.CommandText = _sql;
-                _db.Sql.Parameters.Add(":newPsw", OracleDbType.Varchar2).Value = newDatosUsuario.psw;
                 _db.Sql.Parameters.Add(":newEmail", OracleDbType.Varchar2).Value = newDatosUsuario.email;
                 _db.Sql.Parameters.Add(":newName", OracleDbType.Varchar2).Value = newDatosUsuario.name;
                 _db.Sql.Parameters.Add(":newSurname", OracleDbType.Varchar2).Value = newDatosUsuario.surname;
@@ -391,23 +459,6 @@ namespace Datos
                 throw new Exception("Error en getBlob():\n" + e.Message);
             }
             return _bytesAvatar;
-        }
-
-        /// <summary>
-        /// Transforma un objeto a un array de byte
-        /// </summary>
-        /// <param name="obj"></param>
-        /// <returns></returns>
-        private byte[] ObjectToByteArray(object obj)
-        {
-            if (obj == null)
-                return null;
-            BinaryFormatter bf = new BinaryFormatter();
-            using (MemoryStream ms = new MemoryStream())
-            {
-                bf.Serialize(ms, obj);
-                return ms.ToArray();
-            }
         }
     }
 }

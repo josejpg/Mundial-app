@@ -121,7 +121,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Name = "formPswRecovery";
-            this.Text = "FormRecuperaPass";
+            this.Text = "Recuperar contraseña";
             this.ResumeLayout(false);
             this.PerformLayout();
 

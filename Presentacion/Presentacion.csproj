@@ -77,6 +77,12 @@
     <Compile Include="formAnyoMundial.Designer.cs">
       <DependentUpon>formAnyoMundial.cs</DependentUpon>
     </Compile>
+    <Compile Include="formEliminarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formEliminarUsuario.Designer.cs">
+      <DependentUpon>formEliminarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="formLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,12 @@
     </Compile>
     <Compile Include="formInsertarUsuario.Designer.cs">
       <DependentUpon>formInsertarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formModificarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formModificarUsuario.Designer.cs">
+      <DependentUpon>formModificarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="formPrincipal.cs">
       <SubType>Form</SubType>
@@ -109,11 +121,17 @@
     <EmbeddedResource Include="formAnyoMundial.resx">
       <DependentUpon>formAnyoMundial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formEliminarUsuario.resx">
+      <DependentUpon>formEliminarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formInsertarUsuario.resx">
       <DependentUpon>formInsertarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formLogin.resx">
       <DependentUpon>formLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formModificarUsuario.resx">
+      <DependentUpon>formModificarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>formPrincipal.cs</DependentUpon>

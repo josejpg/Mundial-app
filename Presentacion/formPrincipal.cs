@@ -98,17 +98,16 @@ namespace Presentacion
         }
 
         /// <summary>
-        /// Invocamos al forms de insertar usuario
+        /// Se carga la pantalla para crer nuevo usuario
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void msFormPrincipalUsuariosInsertar_Click(object sender, EventArgs e)
         {
-            //Creamos un formulario formusuariosinsertar que será hijo de formprincipal y lo mostramos.
-            formInsertarUsuario fui = new formInsertarUsuario();
-            fui.MdiParent = this;
-            fui.WindowState = FormWindowState.Maximized;
-            fui.Show();
+            formInsertarUsuario fiu = new formInsertarUsuario();
+            fiu.MdiParent = this;
+            fiu.WindowState = FormWindowState.Maximized;
+            fiu.Show();
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -159,6 +158,11 @@ namespace Presentacion
             this.LayoutMdi(System.Windows.Forms.MdiLayout.TileHorizontal);
         }
 
+        /// <summary>
+        /// Se carga la pantalla de About
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AboutBox1 acercade = new AboutBox1();
@@ -167,12 +171,38 @@ namespace Presentacion
             acercade.Show();
         }
 
+        /// <summary>
+        /// Se carga la pantalla para elegir el año de mundial y listar todos sus partidos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void añoDelMundialToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formAnyoMundial anyoMundial = new formAnyoMundial();
             anyoMundial.MdiParent = this;
             anyoMundial.WindowState = FormWindowState.Maximized;
             anyoMundial.Show();
+        }
+
+        /// <summary>
+        /// Se carga la pantalla para modificar los datos de un usuario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formModificarUsuario fmu = new formModificarUsuario();
+            fmu.MdiParent = this;
+            fmu.WindowState = FormWindowState.Maximized;
+            fmu.Show();
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formEliminarUsuario feu = new formEliminarUsuario();
+            feu.MdiParent = this;
+            feu.WindowState = FormWindowState.Maximized;
+            feu.Show();
         }
     }
 }
