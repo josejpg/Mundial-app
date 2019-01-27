@@ -30,6 +30,7 @@
         {
             this.dgUsers = new System.Windows.Forms.DataGridView();
             this.gbDatosUsuario = new System.Windows.Forms.GroupBox();
+            this.btnCancelForm = new System.Windows.Forms.Button();
             this.cbRol = new System.Windows.Forms.ComboBox();
             this.cbActive = new System.Windows.Forms.CheckBox();
             this.btnSendForm = new System.Windows.Forms.Button();
@@ -67,6 +68,7 @@
             // gbDatosUsuario
             // 
             this.gbDatosUsuario.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gbDatosUsuario.Controls.Add(this.btnCancelForm);
             this.gbDatosUsuario.Controls.Add(this.cbRol);
             this.gbDatosUsuario.Controls.Add(this.cbActive);
             this.gbDatosUsuario.Controls.Add(this.btnSendForm);
@@ -90,8 +92,18 @@
             this.gbDatosUsuario.Size = new System.Drawing.Size(623, 960);
             this.gbDatosUsuario.TabIndex = 1;
             this.gbDatosUsuario.TabStop = false;
-            this.gbDatosUsuario.Text = "Dato Usuario";
+            this.gbDatosUsuario.Text = "Datos Usuario";
             this.gbDatosUsuario.Visible = false;
+            // 
+            // btnCancelForm
+            // 
+            this.btnCancelForm.Location = new System.Drawing.Point(314, 794);
+            this.btnCancelForm.Name = "btnCancelForm";
+            this.btnCancelForm.Size = new System.Drawing.Size(135, 23);
+            this.btnCancelForm.TabIndex = 46;
+            this.btnCancelForm.Text = "Cancelar";
+            this.btnCancelForm.UseVisualStyleBackColor = true;
+            this.btnCancelForm.Click += new System.EventHandler(this.btnCancelForm_Click);
             // 
             // cbRol
             // 
@@ -115,7 +127,7 @@
             // 
             this.btnSendForm.Location = new System.Drawing.Point(165, 794);
             this.btnSendForm.Name = "btnSendForm";
-            this.btnSendForm.Size = new System.Drawing.Size(284, 23);
+            this.btnSendForm.Size = new System.Drawing.Size(132, 23);
             this.btnSendForm.TabIndex = 43;
             this.btnSendForm.Text = "Enviar";
             this.btnSendForm.UseVisualStyleBackColor = true;
@@ -304,5 +316,6 @@
         private System.Windows.Forms.CheckBox cbActive;
         private System.Windows.Forms.Button btnSendForm;
         private System.Windows.Forms.Label txtRol;
+        private System.Windows.Forms.Button btnCancelForm;
     }
 }

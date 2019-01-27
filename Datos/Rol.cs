@@ -53,7 +53,7 @@ namespace Datos
             }
             catch (Exception e)
             {
-                Debug.WriteLine("Error en getRoles(): " + e.Message);
+                throw new Exception("Error en getRoles(): " + e.Message);
             }
             finally
             {

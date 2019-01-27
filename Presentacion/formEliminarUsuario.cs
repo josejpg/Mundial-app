@@ -21,6 +21,13 @@ namespace Presentacion
         {
             InitializeComponent();
             gbDatosUsuario.Visible = false;
+            tbNick.Enabled = false;
+            tbNick.Enabled = false;
+            tbEmail.Enabled = false;
+            tbName.Enabled = false;
+            tbSurname.Enabled = false;
+            cbActive.Enabled = false;
+            cbRol.Enabled = false;
             setRoles();
             setUsers();
         }
@@ -45,11 +52,19 @@ namespace Presentacion
             dgUsers.DataSource = aTmpUsers;
             for (var i = 0; i < aUsers.Count; i++)
             {
-                var a = aUsers[i].avatar;
-                MemoryStream ms = new MemoryStream(aUsers[i].avatar);
-                Image image = Image.FromStream(ms);
-                dgUsers.Rows[i].Cells[0].Value = image;
-                dgUsers.Rows[i].Height = image.Height;
+                if (aUsers[i].avatar != null)
+                {
+                    MemoryStream ms = new MemoryStream(aUsers[i].avatar);
+                    Image image = Image.FromStream(ms);
+                    dgUsers.Rows[i].Cells[0].Value = image;
+                    dgUsers.Rows[i].Height = image.Height;
+                }
+                else
+                {
+                    Bitmap image = new Bitmap(Presentacion.Properties.Resources.user_default);
+                    dgUsers.Rows[i].Cells[0].Value = image;
+                    dgUsers.Rows[i].Height = image.Height;
+                }
             }
         }
 
@@ -64,20 +79,14 @@ namespace Presentacion
                     int idUser = Convert.ToInt32(dgUsers.CurrentRow.Cells[1].Value);
 
                     user = mundial.getUsuarioById(idUser);
-                    tbNick.Enabled = false;
                     tbNick.Text = user.nick;
-                    tbNick.Enabled = false;
                     tbEmail.Text = user.email;
-                    tbEmail.Enabled = false;
                     tbName.Text = user.name;
-                    tbName.Enabled = false;
                     tbSurname.Text = user.surname;
-                    tbSurname.Enabled = false;
                     setAvatar(user.avatar);
                     cbActive.Checked = user.active == "S";
-                    cbActive.Enabled = false;
                     cbRol.SelectedItem = aRoles.Find(datosRol => datosRol.idRol == user.idRol).descRol;
-                    cbRol.Enabled = false;
+                   
                 }
                 catch (Exception ex)
                 {
@@ -107,6 +116,11 @@ namespace Presentacion
                     memStream = null;
                 }
             }
+            else
+            {
+                pbAvatar.Image = new Bitmap(Presentacion.Properties.Resources.user_default);
+                pbAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
         }
 
         private void btnSendForm_Click(object sender, EventArgs e)
@@ -125,6 +139,19 @@ namespace Presentacion
                     MessageBox.Show("No ha sido posible eliminar el usuario. Vuelva a intentarlo en unos momentos.");
                 }
             }
+        }
+
+        private void btnCancelForm_Click(object sender, EventArgs e)
+        {
+            gbDatosUsuario.Visible = false;
+            user = new Entidades.Usuario();
+            tbNick.Text = String.Empty;
+            tbEmail.Text = String.Empty;
+            tbName.Text = String.Empty;
+            tbSurname.Text = String.Empty;
+            setAvatar(user.avatar);
+            cbActive.Checked = false;
+            cbRol.SelectedItem = null;
         }
     }
 }

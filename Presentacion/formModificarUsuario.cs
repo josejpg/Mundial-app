@@ -46,11 +46,19 @@ namespace Presentacion
             dgUsers.DataSource = aTmpUsers;
             for ( var i = 0; i < aUsers.Count; i++)
             {
-                var a = aUsers[i].avatar;
-                MemoryStream ms = new MemoryStream(aUsers[i].avatar);
-                Image image = Image.FromStream(ms);
-                dgUsers.Rows[i].Cells[0].Value = image;
-                dgUsers.Rows[i].Height = image.Height;
+                if (aUsers[i].avatar != null)
+                {
+                    MemoryStream ms = new MemoryStream(aUsers[i].avatar);
+                    Image image = Image.FromStream(ms);
+                    dgUsers.Rows[i].Cells[0].Value = image;
+                    dgUsers.Rows[i].Height = image.Height;
+                }
+                else
+                {
+                    Bitmap image = new Bitmap(Presentacion.Properties.Resources.user_default);
+                    dgUsers.Rows[i].Cells[0].Value = image;
+                    dgUsers.Rows[i].Height = image.Height;
+                }
             }
         }
 
@@ -102,6 +110,11 @@ namespace Presentacion
                     MessageBox.Show("Ha ocurrido un error al montar el avatar: " + ex.Message);
                     memStream = null;
                 }
+            }
+            else
+            {
+                pbAvatar.Image = new Bitmap(Presentacion.Properties.Resources.user_default);
+                pbAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
 
@@ -205,6 +218,23 @@ namespace Presentacion
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnCancelForm_Click(object sender, EventArgs e)
+        {
+            var confirmResult = MessageBox.Show("¿Seguro que desea cancelar la modificación de este usuario?", "Cancelar", MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                gbDatosUsuario.Visible = false;
+                user = new Entidades.Usuario();
+                tbNick.Text = String.Empty;
+                tbEmail.Text = String.Empty;
+                tbName.Text = String.Empty;
+                tbSurname.Text = String.Empty;
+                setAvatar(user.avatar);
+                cbActive.Checked = false;
+                cbRol.SelectedItem = null;
             }
         }
     }

@@ -20,16 +20,16 @@ namespace Presentacion
             for ( var year = DateTime.Now.Year; year >= 1900; year--)
             {
 
-                comboBox1.Items.Add(year) ;
+                cbYear.Items.Add(year) ;
 
             }
-            comboBox1.SelectedItem = formPrincipal.yearPreferences;
+            cbYear.SelectedItem = formPrincipal.yearPreferences;
         }
 
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            formPrincipal.yearPreferences = (int)comboBox1.SelectedItem;
+            formPrincipal.yearPreferences = (int)cbYear.SelectedItem;
             getPartidos();
         }
 
@@ -40,13 +40,13 @@ namespace Presentacion
         {
             Negocio.Mundial mundial;
             List<Entidades.Partido> listPartidos;
-            comboBox1.Enabled = false;
+            cbYear.Enabled = false;
             dataGridView1.Enabled = false;
             dataGridView1.DataSource = null;
             try
             {
                 mundial = new Negocio.Mundial();
-                listPartidos = mundial.getPartidos((int)comboBox1.SelectedItem);
+                listPartidos = mundial.getPartidos((int)cbYear.SelectedItem);
                 dataGridView1.DataSource = listPartidos;
             }
             catch (Exception ex)
@@ -54,7 +54,7 @@ namespace Presentacion
                 MessageBox.Show("Ha ocurrido un error obteniendo los datos del mundial: " + ex.Message);
             }
 
-            comboBox1.Enabled = true;
+            cbYear.Enabled = true;
             dataGridView1.Enabled = true;
         }
     }

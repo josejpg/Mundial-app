@@ -80,7 +80,7 @@ namespace Datos
             }
             catch (Exception e)
             {
-                Debug.WriteLine("Error en getPartidosAnyo(): " + e.Message);
+                throw new Exception("Error en getPartidosAnyo(): " + e.Message);
             }
             finally
             {

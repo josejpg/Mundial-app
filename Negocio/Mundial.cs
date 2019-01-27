@@ -167,7 +167,7 @@ namespace Negocio
         /// <param name="equipo"></param>
         /// <param name="year"></param>
         /// <returns></returns>
-        public List<Entidades.Jugador> filtraUsuarios(string name, string team, int year)
+        public List<Entidades.Jugador> filtraJugador(string name, string team, int year)
         {
             return new Datos.Jugador().getJugadores(name, team, year);
         }
@@ -177,7 +177,7 @@ namespace Negocio
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public DataTable getJugador(string name)
+        public Entidades.Jugador getJugador(string name)
         {
             return new Datos.Jugador().getJugador(name);
         }
@@ -190,6 +190,15 @@ namespace Negocio
         public int updateJugador(Entidades.Jugador datosJugador)
         {
             return new Datos.Jugador().updateJugador(datosJugador);
+        }
+
+        /// <summary>
+        /// Devuelve un listado de partidos por año o sino todos
+        /// </summary>
+        /// <returns></returns>
+        public List<Entidades.Equipo> getEquipos()
+        {
+            return new Datos.Jugador().getEquipos();
         }
     }
 }

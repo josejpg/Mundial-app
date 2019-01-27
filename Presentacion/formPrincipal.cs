@@ -34,6 +34,7 @@ namespace Presentacion
         {
             InitializeComponent();
             this.usuario = usuario;
+            userToolStripMenuItem.Text = (this.usuario.name + " " + this.usuario.surname).Trim();
             this.mundial = new Mundial();
             this.rolTipo = "";
             this.FormClosing += FormPrincipal_FormClosing;
@@ -141,12 +142,6 @@ namespace Presentacion
                 MessageBox.Show("Ha ocurrido un error obteniendo los roles de la bd: " + ex.Message);
             }
         }
-
-
-        private void FormPrincipal_Load(object sender, EventArgs e)
-        {
-
-        }
  
         private void organizarVerticalToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -203,6 +198,14 @@ namespace Presentacion
             feu.MdiParent = this;
             feu.WindowState = FormWindowState.Maximized;
             feu.Show();
+        }
+
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formJugadores fj = new formJugadores();
+            fj.MdiParent = this;
+            fj.WindowState = FormWindowState.Maximized;
+            fj.Show();
         }
     }
 }

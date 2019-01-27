@@ -35,7 +35,6 @@
             this.btnSendForm = new System.Windows.Forms.Button();
             this.txtRol = new System.Windows.Forms.Label();
             this.tbNick = new System.Windows.Forms.TextBox();
-            this.pbAvatar = new System.Windows.Forms.PictureBox();
             this.txtNick = new System.Windows.Forms.Label();
             this.txtErrorSurname = new System.Windows.Forms.Label();
             this.txtErrorName = new System.Windows.Forms.Label();
@@ -47,6 +46,8 @@
             this.txtSurname = new System.Windows.Forms.Label();
             this.tbName = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.Label();
+            this.btnCancelForm = new System.Windows.Forms.Button();
+            this.pbAvatar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsers)).BeginInit();
             this.gbDatosUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
@@ -66,6 +67,7 @@
             // gbDatosUsuario
             // 
             this.gbDatosUsuario.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gbDatosUsuario.Controls.Add(this.btnCancelForm);
             this.gbDatosUsuario.Controls.Add(this.cbRol);
             this.gbDatosUsuario.Controls.Add(this.cbActive);
             this.gbDatosUsuario.Controls.Add(this.btnSendForm);
@@ -88,7 +90,7 @@
             this.gbDatosUsuario.Size = new System.Drawing.Size(623, 960);
             this.gbDatosUsuario.TabIndex = 2;
             this.gbDatosUsuario.TabStop = false;
-            this.gbDatosUsuario.Text = "Dato Usuario";
+            this.gbDatosUsuario.Text = "Datos Usuario";
             this.gbDatosUsuario.Visible = false;
             // 
             // cbRol
@@ -113,7 +115,7 @@
             // 
             this.btnSendForm.Location = new System.Drawing.Point(165, 716);
             this.btnSendForm.Name = "btnSendForm";
-            this.btnSendForm.Size = new System.Drawing.Size(284, 23);
+            this.btnSendForm.Size = new System.Drawing.Size(138, 23);
             this.btnSendForm.TabIndex = 43;
             this.btnSendForm.Text = "Eliminar";
             this.btnSendForm.UseVisualStyleBackColor = true;
@@ -135,19 +137,6 @@
             this.tbNick.ShortcutsEnabled = false;
             this.tbNick.Size = new System.Drawing.Size(168, 20);
             this.tbNick.TabIndex = 23;
-            // 
-            // pbAvatar
-            // 
-            this.pbAvatar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pbAvatar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbAvatar.ErrorImage = global::Presentacion.Properties.Resources.user_default;
-            this.pbAvatar.Image = global::Presentacion.Properties.Resources.user_default;
-            this.pbAvatar.InitialImage = global::Presentacion.Properties.Resources.user_default;
-            this.pbAvatar.Location = new System.Drawing.Point(176, 19);
-            this.pbAvatar.Name = "pbAvatar";
-            this.pbAvatar.Size = new System.Drawing.Size(260, 203);
-            this.pbAvatar.TabIndex = 35;
-            this.pbAvatar.TabStop = false;
             // 
             // txtNick
             // 
@@ -250,6 +239,30 @@
             this.txtName.TabIndex = 32;
             this.txtName.Text = "Nombre";
             // 
+            // btnCancelForm
+            // 
+            this.btnCancelForm.Location = new System.Drawing.Point(309, 716);
+            this.btnCancelForm.Name = "btnCancelForm";
+            this.btnCancelForm.Size = new System.Drawing.Size(140, 23);
+            this.btnCancelForm.TabIndex = 46;
+            this.btnCancelForm.Text = "Cancelar";
+            this.btnCancelForm.UseVisualStyleBackColor = true;
+            this.btnCancelForm.Click += new System.EventHandler(this.btnCancelForm_Click);
+            // 
+            // pbAvatar
+            // 
+            this.pbAvatar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pbAvatar.Cursor = System.Windows.Forms.Cursors.No;
+            this.pbAvatar.Enabled = false;
+            this.pbAvatar.ErrorImage = global::Presentacion.Properties.Resources.user_default;
+            this.pbAvatar.Image = global::Presentacion.Properties.Resources.user_default;
+            this.pbAvatar.InitialImage = global::Presentacion.Properties.Resources.user_default;
+            this.pbAvatar.Location = new System.Drawing.Point(176, 19);
+            this.pbAvatar.Name = "pbAvatar";
+            this.pbAvatar.Size = new System.Drawing.Size(260, 203);
+            this.pbAvatar.TabIndex = 35;
+            this.pbAvatar.TabStop = false;
+            // 
             // formEliminarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -290,5 +303,6 @@
         private System.Windows.Forms.Label txtSurname;
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.Label txtName;
+        private System.Windows.Forms.Button btnCancelForm;
     }
 }

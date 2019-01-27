@@ -12,11 +12,11 @@ namespace Entidades
         /// Atributos
         /// </summary>
         public string nombre { get; set; }
-        public string direccion;
-        public string puestoHab;
-        public DateTime fechaNac;
-        public string equipoJugador;
-        public byte[] avatar;
+        public string direccion { get; set; }
+        public string puestoHab { get; set; }
+        public DateTime fechaNac { get; set; }
+        public string equipoJugador { get; set; }
+        public byte[] avatar { get; set; }
 
         /// <summary>
         /// Constructor Sin argumentos

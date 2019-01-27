@@ -52,6 +52,7 @@
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar = new System.Windows.Forms.StatusStrip();
             this.sbHora = new System.Windows.Forms.ToolStripStatusLabel();
+            this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msFormPrincipal.SuspendLayout();
             this.statusBar.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +67,8 @@
             this.partidosToolStripMenuItem,
             this.informesToolStripMenuItem,
             this.ventanaToolStripMenuItem,
-            this.acercaDeToolStripMenuItem});
+            this.acercaDeToolStripMenuItem,
+            this.userToolStripMenuItem});
             this.msFormPrincipal.Location = new System.Drawing.Point(0, 0);
             this.msFormPrincipal.Name = "msFormPrincipal";
             this.msFormPrincipal.Size = new System.Drawing.Size(1264, 24);
@@ -109,21 +111,21 @@
             // msFormPrincipalUsuariosInsertar
             // 
             this.msFormPrincipalUsuariosInsertar.Name = "msFormPrincipalUsuariosInsertar";
-            this.msFormPrincipalUsuariosInsertar.Size = new System.Drawing.Size(180, 22);
+            this.msFormPrincipalUsuariosInsertar.Size = new System.Drawing.Size(125, 22);
             this.msFormPrincipalUsuariosInsertar.Text = "Insertar";
             this.msFormPrincipalUsuariosInsertar.Click += new System.EventHandler(this.msFormPrincipalUsuariosInsertar_Click);
             // 
             // modificarToolStripMenuItem
             // 
             this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.modificarToolStripMenuItem.Text = "Modificar";
             this.modificarToolStripMenuItem.Click += new System.EventHandler(this.modificarToolStripMenuItem_Click);
             // 
             // eliminarToolStripMenuItem
             // 
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
@@ -140,6 +142,7 @@
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
             this.consultarToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.consultarToolStripMenuItem.Text = "Consultar y modificar";
+            this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
             // 
             // equiposToolStripMenuItem
             // 
@@ -240,9 +243,16 @@
             // sbHora
             // 
             this.sbHora.Name = "sbHora";
-            this.sbHora.Size = new System.Drawing.Size(88, 17);
-            this.sbHora.Text = "tbfechaSistema";
+            this.sbHora.Size = new System.Drawing.Size(82, 17);
+            this.sbHora.Text = "Fecha Sistema";
             this.sbHora.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
+            // userToolStripMenuItem
+            // 
+            this.userToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.userToolStripMenuItem.Name = "userToolStripMenuItem";
+            this.userToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
+            this.userToolStripMenuItem.Text = "User";
             // 
             // formPrincipal
             // 
@@ -258,7 +268,6 @@
             this.MinimumSize = new System.Drawing.Size(1280, 1024);
             this.Name = "formPrincipal";
             this.Text = "Mundial";
-            this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.msFormPrincipal.ResumeLayout(false);
             this.msFormPrincipal.PerformLayout();
             this.statusBar.ResumeLayout(false);
@@ -294,5 +303,6 @@
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusBar;
         private System.Windows.Forms.ToolStripStatusLabel sbHora;
+        private System.Windows.Forms.ToolStripMenuItem userToolStripMenuItem;
     }
 }

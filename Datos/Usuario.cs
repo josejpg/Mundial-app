@@ -75,7 +75,7 @@ namespace Datos
             }
             catch (Exception e)
             {
-                Debug.WriteLine("Error en getUsuarios(): " + e.Message);
+                throw new Exception("Error en getUsuarios(): " + e.Message);
             }
             finally
             {
@@ -144,7 +144,7 @@ namespace Datos
             }
             catch (Exception ex)
             {
-                Debug.WriteLine("Error en compruebaLogin(): " + ex.Message);
+                throw new Exception("Error en compruebaLogin(): " + ex.Message);
             }
             finally
             {
@@ -218,7 +218,7 @@ namespace Datos
             }
             catch (Exception ex)
             {
-                Debug.WriteLine("Error en compruebaLogin(): " + ex.Message);
+                throw new Exception("Error en compruebaLogin(): " + ex.Message);
             }
             finally
             {
@@ -271,7 +271,7 @@ namespace Datos
             }
             catch (Exception e)
             {
-                Debug.WriteLine("Error en updateUsuario(): " + e.Message);
+                throw new Exception("Error en updateUsuario(): " + e.Message);
             }
             finally
             {
@@ -315,7 +315,7 @@ namespace Datos
             }
             catch (Exception e)
             {
-                Debug.WriteLine("Error en updatePswUsuario(): " + e.Message);
+                throw new Exception("Error en updatePswUsuario(): " + e.Message);
             }
             finally
             {
@@ -384,7 +384,7 @@ namespace Datos
             }
             catch (Exception e)
             {
-                Debug.WriteLine("Error en newUsuario(): " + e.Message);
+                throw new Exception("Error en newUsuario(): " + e.Message);
             }
             finally
             {
@@ -425,7 +425,7 @@ namespace Datos
             }
             catch (Exception e)
             {
-                Debug.WriteLine("Error en deleteUsuario(): " + e.Message);
+                throw new Exception("Error en deleteUsuario(): " + e.Message);
             }
             finally
             {

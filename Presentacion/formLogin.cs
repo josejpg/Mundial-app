@@ -90,7 +90,6 @@ namespace Presentacion
                     mundial = new Mundial();
                     usuario = new Entidades.Usuario();
                     usuario = mundial.login(tbUser.Text, utils.MD5Encrypt(tbPassword.Text));
-                    Debug.Write( usuario.ToString() );
                     if (usuario.active == "S") 
                     {
                         if (!string.IsNullOrEmpty(usuario.nick))
