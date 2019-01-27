@@ -14,31 +14,14 @@ namespace Entidades
         /// <summary>
         /// Atributos
         /// </summary>
-        private int _idRol;
-        private string _descRol;
-
-        /// <summary>
-        /// Variables
-        /// </summary>
-        public int IdRol
-        {
-            get => this._idRol;
-            set => this._idRol = value;
-        }
-        public string DescRol
-        {
-            get => this._descRol;
-            set => this._descRol = value;
-        }
+        public int idRol { get; set; }
+        public string descRol { get; set; }
 
         /// <summary>
         /// Constructor Sin argumentos
         /// </summary>
-        public Rol()
-        {
-            _idRol = 0;
-            DescRol = string.Empty;
-        }
+        public Rol() { }
+
         /// <summary>
         /// Constructor Con argumentos
         /// </summary>
@@ -46,8 +29,8 @@ namespace Entidades
         /// <param name="rol"></param>
         public Rol( int id, string rol )
         {
-            IdRol = id;
-            DescRol = rol;
+            this.idRol = id;
+            this.descRol = rol;
         }
         /// <summary>
         /// Constructor Copia
@@ -55,8 +38,8 @@ namespace Entidades
         /// <param name="previousRol"></param>
         public Rol(Rol previousRol)
         {
-            this._idRol = previousRol.IdRol;
-            this._descRol = previousRol.DescRol;
+            this.idRol = previousRol.idRol;
+            this.descRol = previousRol.descRol;
         }
 
         /// <summary>
@@ -64,8 +47,8 @@ namespace Entidades
         /// </summary>
         ~Rol()
         {
-            this._idRol = 0;
-            this._descRol = string.Empty;
+            this.idRol = 0;
+            this.descRol = "";
         }
 
         /// <summary>
@@ -74,7 +57,7 @@ namespace Entidades
         /// <returns></returns>
         public override string ToString()
         {
-            return $"{ this._idRol }#{ this._descRol }";
+            return $"{ this.idRol }#{ this.descRol }";
         }
     }
 }

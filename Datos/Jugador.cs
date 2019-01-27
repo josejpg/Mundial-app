@@ -32,7 +32,6 @@ namespace Datos
 
             try
             {
-
                 _db.startDB();
                 _db.Sql = _db.DbConnection.CreateCommand();
                 _db.Sql.BindByName = true;
@@ -74,7 +73,6 @@ namespace Datos
 
             try
             {
-
                 _sql = $@"SELECT DISTINC 
                             j.NOMBRE,
                             j.DIRECCION,
@@ -116,11 +114,11 @@ namespace Datos
                 {
                     listJugadores.Add(new Entidades.Jugador
                     {
-                        Nombre = _dataSQL[0].ToString(),
-                        Direccion = _dataSQL[1].ToString(),
-                        PuestoHab = _dataSQL[2].ToString(),
-                        FechaNac = (_dataSQL[3] is DBNull)?DateTime.Now:(DateTime)_dataSQL[3],
-                        EquipoJugador = _dataSQL[4].ToString()
+                        nombre = _dataSQL[0].ToString(),
+                        direccion = _dataSQL[1].ToString(),
+                        puestoHab = _dataSQL[2].ToString(),
+                        fechaNac = (_dataSQL[3] is DBNull)?DateTime.Now:(DateTime)_dataSQL[3],
+                        equipoJugador = _dataSQL[4].ToString()
                     });
                 }
 
@@ -155,12 +153,12 @@ namespace Datos
                 _execSQL.BindByName = true;
                 _execSQL.CommandType = CommandType.StoredProcedure;
                 _execSQL.CommandText = "CONSULTAS.GRABAR_JUGADOR";
-                _execSQL.Parameters.Add("v_nombre", OracleDbType.Varchar2, newDatosJugador.Nombre, ParameterDirection.Input);
-                _execSQL.Parameters.Add("v_equipo", OracleDbType.Varchar2, newDatosJugador.EquipoJugador, ParameterDirection.Input);
-                _execSQL.Parameters.Add("v_direccion", OracleDbType.Varchar2, newDatosJugador.Direccion, ParameterDirection.Input);
-                _execSQL.Parameters.Add("v_puesto_h", OracleDbType.Varchar2, newDatosJugador.PuestoHab, ParameterDirection.Input);
-                _execSQL.Parameters.Add("v_fec_na", OracleDbType.Date, newDatosJugador.FechaNac, ParameterDirection.Input);
-                _execSQL.Parameters.Add("v_foto", OracleDbType.Blob, newDatosJugador.Avatar, ParameterDirection.Input);
+                _execSQL.Parameters.Add("v_nombre", OracleDbType.Varchar2, newDatosJugador.nombre, ParameterDirection.Input);
+                _execSQL.Parameters.Add("v_equipo", OracleDbType.Varchar2, newDatosJugador.equipoJugador, ParameterDirection.Input);
+                _execSQL.Parameters.Add("v_direccion", OracleDbType.Varchar2, newDatosJugador.direccion, ParameterDirection.Input);
+                _execSQL.Parameters.Add("v_puesto_h", OracleDbType.Varchar2, newDatosJugador.puestoHab, ParameterDirection.Input);
+                _execSQL.Parameters.Add("v_fec_na", OracleDbType.Date, newDatosJugador.fechaNac, ParameterDirection.Input);
+                _execSQL.Parameters.Add("v_foto", OracleDbType.Blob, newDatosJugador.avatar, ParameterDirection.Input);
 
                 affectedRows = _db.execSQL();
                 return affectedRows;

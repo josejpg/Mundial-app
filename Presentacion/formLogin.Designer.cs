@@ -28,79 +28,108 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formLogin));
-            this.tbUser = new System.Windows.Forms.TextBox();
-            this.tbPassword = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lnkLabel = new System.Windows.Forms.LinkLabel();
             this.btAcceder = new System.Windows.Forms.Button();
-            this.btRecPass = new System.Windows.Forms.Button();
+            this.tbPassword = new System.Windows.Forms.TextBox();
+            this.tbUser = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // tbUser
+            // groupBox1
             // 
-            this.tbUser.Location = new System.Drawing.Point(51, 303);
-            this.tbUser.Name = "tbUser";
-            this.tbUser.Size = new System.Drawing.Size(294, 20);
-            this.tbUser.TabIndex = 4;
-            this.tbUser.Text = "Usuario";
+            this.groupBox1.Controls.Add(this.lnkLabel);
+            this.groupBox1.Controls.Add(this.btAcceder);
+            this.groupBox1.Controls.Add(this.tbPassword);
+            this.groupBox1.Controls.Add(this.tbUser);
+            this.groupBox1.Location = new System.Drawing.Point(563, 134);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(405, 268);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Acceso a la aplicación";
             // 
-            // tbPassword
+            // lnkLabel
             // 
-            this.tbPassword.Location = new System.Drawing.Point(51, 340);
-            this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(294, 20);
-            this.tbPassword.TabIndex = 5;
-            this.tbPassword.Text = "Contraseña";
+            this.lnkLabel.AutoSize = true;
+            this.lnkLabel.Location = new System.Drawing.Point(122, 222);
+            this.lnkLabel.Name = "lnkLabel";
+            this.lnkLabel.Size = new System.Drawing.Size(148, 13);
+            this.lnkLabel.TabIndex = 4;
+            this.lnkLabel.TabStop = true;
+            this.lnkLabel.Text = "¿Has olvidado la contraseña?";
+            this.lnkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkLabel_LinkClicked);
             // 
             // btAcceder
             // 
             this.btAcceder.BackColor = System.Drawing.SystemColors.Window;
-            this.btAcceder.Location = new System.Drawing.Point(51, 387);
+            this.btAcceder.Location = new System.Drawing.Point(7, 128);
             this.btAcceder.Name = "btAcceder";
-            this.btAcceder.Size = new System.Drawing.Size(294, 31);
+            this.btAcceder.Size = new System.Drawing.Size(370, 56);
             this.btAcceder.TabIndex = 3;
             this.btAcceder.Text = "Acceder";
             this.btAcceder.UseVisualStyleBackColor = false;
             this.btAcceder.Click += new System.EventHandler(this.btAcceder_Click);
             // 
-            // btRecPass
+            // tbPassword
             // 
-            this.btRecPass.BackColor = System.Drawing.Color.White;
-            this.btRecPass.Location = new System.Drawing.Point(51, 424);
-            this.btRecPass.Name = "btRecPass";
-            this.btRecPass.Size = new System.Drawing.Size(294, 23);
-            this.btRecPass.TabIndex = 4;
-            this.btRecPass.Text = "¿Has olvidado contraseña?";
-            this.btRecPass.UseVisualStyleBackColor = false;
-            this.btRecPass.Click += new System.EventHandler(this.btRecPass_Click);
+            this.tbPassword.Location = new System.Drawing.Point(7, 81);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '*';
+            this.tbPassword.Size = new System.Drawing.Size(370, 20);
+            this.tbPassword.TabIndex = 2;
+            this.tbPassword.Text = "Contraseña";
             // 
-            // FormLogin
+            // tbUser
+            // 
+            this.tbUser.Location = new System.Drawing.Point(7, 55);
+            this.tbUser.Name = "tbUser";
+            this.tbUser.Size = new System.Drawing.Size(370, 20);
+            this.tbUser.TabIndex = 1;
+            this.tbUser.Text = "Usuario";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Image = global::Presentacion.Properties.Resources._280_MAG_FIFA;
+            this.pictureBox1.Location = new System.Drawing.Point(23, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(509, 532);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
+            // formLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(991, 556);
-            this.Controls.Add(this.btRecPass);
-            this.Controls.Add(this.btAcceder);
-            this.Controls.Add(this.tbPassword);
-            this.Controls.Add(this.tbUser);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
-            this.Name = "FormLogin";
+            this.Name = "formLogin";
             this.ShowIcon = false;
             this.Text = "LOGIN";
             this.Load += new System.EventHandler(this.FormLogin_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox tbUser;
-        private System.Windows.Forms.TextBox tbPassword;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btAcceder;
-        private System.Windows.Forms.Button btRecPass;
+        private System.Windows.Forms.TextBox tbPassword;
+        private System.Windows.Forms.TextBox tbUser;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.LinkLabel lnkLabel;
     }
 }

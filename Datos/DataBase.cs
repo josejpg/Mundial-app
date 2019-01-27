@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Diagnostics;
 using Oracle.ManagedDataAccess.Client;
 
 namespace Datos
@@ -68,7 +69,6 @@ namespace Datos
         /// </summary>
         ~DataBase()
         {
-            
             this._userDB = "";
             this._pswDB = "";
             this._hostDB = "";
@@ -93,14 +93,16 @@ namespace Datos
         /// </summary>
         public void closeDB()
         {
-            if (this._reader.IsClosed == false)
+            if (this._reader != null && 
+                this._reader.IsClosed == false)
             {
                 this._reader.Close();
                 this._reader.Dispose();
                 this._sql.Dispose();
             }
 
-            if (this._dbConection.State == ConnectionState.Open)
+            if (this._dbConection != null && 
+                this._dbConection.State == ConnectionState.Open)
             {
                 this._dbConection.Close();
                 this._dbConection.Dispose();
@@ -114,6 +116,7 @@ namespace Datos
         /// <returns></returns>
         public OracleDataReader selectSQL()
         {
+            this._reader = null;
             try
             {
                 if (this._dbConection.State == ConnectionState.Open)

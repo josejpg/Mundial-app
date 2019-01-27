@@ -17,30 +17,28 @@ namespace Presentacion
     /// </author>
     public partial class formPswRecovery : Form
     {
-        private string nickUser;
 
-        public formPswRecovery(string nick)
+        public formPswRecovery()
         {
             InitializeComponent();
-
-            this.nickUser = nick;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Mundial mundial;
 
-            if (!string.IsNullOrEmpty(tbPass.Text) && !string.IsNullOrEmpty(tbPassConf.Text))
+            if ( !string.IsNullOrEmpty(tbUser.Text ) && 
+                !string.IsNullOrEmpty( tbPsw.Text ) && 
+                !string.IsNullOrEmpty( tbPsw2.Text ) )
             {
-                if (tbPass.Text == tbPassConf.Text)
+                if ( tbPsw.Text == tbPsw2.Text )
                 {
-                    if (utils.isValidPsw(tbPass.Text))
+                    if ( utils.isValidPsw( tbPsw.Text ) )
                     {
                         try
                         {
                             mundial = new Mundial();
-
-                            if (mundial.updatePsw( this.nickUser, utils.MD5Encrypt(tbPass.Text)) > 0)
+                            if (mundial.updatePsw( tbUser.Text, utils.MD5Encrypt( tbPsw.Text ) ) > 0)
                             {
                                 MessageBox.Show("La contraseña se han cambiado correctamente");
                                 this.Dispose();
@@ -67,9 +65,8 @@ namespace Presentacion
             }
             else
             {
-                MessageBox.Show("Ambos campos son obligatorios, debe escribir la contraseña y confirmarla antes de pulsar en modificar.");
+                MessageBox.Show("Todos los campos son obligatorios.");
             }
         }
-
     }
 }

@@ -11,212 +11,13 @@ namespace Entidades
         /// <summary>
         /// Atributos
         /// </summary>
-		private string _nombreJug;
-        private string _equpipoLPart;
-        private string _equpipoVPart;
-        private DateTime _fechaPart;
-        private int? _minJugar;
-        private string _puestoJugar;
-        private int? _dorsal;
-
-        /// <summary>
-        /// Variables
-        /// </summary>
-        public string NombreJug
-        {
-
-            get => this._nombreJug;
-
-            set
-            {
-
-                if (!string.IsNullOrWhiteSpace(value.Trim()))
-                {
-
-                    if (value.Length <= 60)
-                    {
-
-                        this._nombreJug = value;
-
-                    }
-                    else
-                    {
-
-                        throw new Exception("El nombre del jugador no puede superar los 60 caracteres.");
-
-                    }
-
-
-                }
-                else
-                {
-
-                    throw new Exception("El nombre del jugador no puede ser nulo ni vacío.");
-
-                }
-
-            }
-
-        }
-
-        public string EquipoLPart
-        {
-
-            get => this._equpipoLPart;
-
-            set
-            {
-
-                if (!string.IsNullOrWhiteSpace(value.Trim()))
-                {
-
-                    if (value.Length <= 50)
-                    {
-
-                        this._equpipoLPart = value;
-
-                    }
-                    else
-                    {
-
-                        throw new Exception("El equipo L part no puede superar los 50 caracteres.");
-
-                    }
-
-
-                }
-                else
-                {
-
-                    throw new Exception("El equipo L part no puede ser nulo ni vacío.");
-
-                }
-
-            }
-
-        }
-
-        public string EquipoVPart
-        {
-
-            get => this._equpipoVPart;
-
-            set
-            {
-
-                if (!string.IsNullOrWhiteSpace(value.Trim()))
-                {
-
-                    if (value.Length <= 50)
-                    {
-
-                        this._equpipoVPart = value;
-
-                    }
-                    else
-                    {
-
-                        throw new Exception("El equipo V part no puede superar los 50 caracteres.");
-
-                    }
-
-
-                }
-                else
-                {
-
-                    throw new Exception("El equipo V part no puede ser nulo ni vacío.");
-
-                }
-
-            }
-
-        }
-
-        public DateTime FechaPart
-        {
-
-            get => this._fechaPart;
-
-            set
-            {
-                DateTime time;
-
-                if (DateTime.TryParse(value.ToString(), out time))
-                {
-
-                    this._fechaPart = value;
-
-                }
-                else
-                {
-
-                    throw new Exception("La fecha part no tiene un formato válido.");
-
-                }
-
-            }
-
-        }
-
-        public int? MinJugar
-        {
-
-            get => this._minJugar;
-
-            set
-            {
-
-                if (value >= 0 && value.ToString().Length <= 3)
-                {
-
-                    this._minJugar = value;
-
-                }
-                else
-                {
-
-                    throw new Exception("Los minJugar no pueden ser menores a 0 ni superar los 3 caracteres.");
-
-                }
-
-            }
-
-        }
-
-        public string PuestoJugar
-        {
-
-            get => this._puestoJugar;
-
-            set
-            {
-
-                if (value.Length <= 2)
-                {
-
-                    this._puestoJugar = value;
-
-                }
-                else
-                {
-
-                    throw new Exception("El puestoJugar no puede superar los 2 caracteres.");
-
-                }
-
-            }
-
-        }
-
-        public int? Dorsal
-        {
-
-            get => this._dorsal;
-
-            set => this._dorsal = value;
-
-        }
+		public string nombreJug { get; set; }
+        public string equpipoLPart { get; set; }
+        public string equpipoVPart { get; set; }
+        public DateTime fechaPart { get; set; }
+        public int? minJugar { get; set; }
+        public string puestoJugar { get; set; }
+        public int? dorsal { get; set; }
 
         /// <summary>
         /// Constructores
@@ -237,26 +38,26 @@ namespace Entidades
         )
         {
 
-            NombreJug = newNombreJug;
-            EquipoLPart = newEquipoLPart;
-            EquipoVPart = newEquipoVPart;
-            FechaPart = newFechaPart;
-            MinJugar = newMinJugar;
-            PuestoJugar = newPuestoJugar;
-            Dorsal = newDorsal;
+            this.nombreJug = newNombreJug;
+            this.equpipoLPart = newEquipoLPart;
+            this.equpipoVPart = newEquipoVPart;
+            this.fechaPart = newFechaPart;
+            this.minJugar = newMinJugar;
+            this.puestoJugar = newPuestoJugar;
+            this.dorsal = newDorsal;
 
         }
 
         public Jugar(Jugar previousJugar)
         {
 
-            NombreJug = previousJugar.NombreJug;
-            EquipoLPart = previousJugar.EquipoLPart;
-            EquipoVPart = previousJugar.EquipoVPart;
-            FechaPart = previousJugar.FechaPart;
-            MinJugar = previousJugar.MinJugar;
-            PuestoJugar = previousJugar.PuestoJugar;
-            Dorsal = previousJugar.Dorsal;
+            this.nombreJug = previousJugar.nombreJug;
+            this.equpipoLPart = previousJugar.equpipoLPart;
+            this.equpipoVPart = previousJugar.equpipoVPart;
+            this.fechaPart = previousJugar.fechaPart;
+            this.minJugar = previousJugar.minJugar;
+            this.puestoJugar = previousJugar.puestoJugar;
+            this.dorsal = previousJugar.dorsal;
 
         }
 
@@ -266,13 +67,13 @@ namespace Entidades
         ~Jugar()
         {
 
-            NombreJug = "";
-            EquipoLPart = "";
-            EquipoVPart = "";
-            FechaPart = DateTime.Now;
-            MinJugar = null;
-            PuestoJugar = "";
-            Dorsal = null;
+            this.nombreJug = "";
+            this.equpipoLPart = "";
+            this.equpipoVPart = "";
+            this.fechaPart = DateTime.Now;
+            this.minJugar = null;
+            this.puestoJugar = "";
+            this.dorsal = null;
 
         }
 
@@ -283,7 +84,7 @@ namespace Entidades
 
         {
 
-            return $"{ this._nombreJug }#{ this._equpipoLPart }#{ this._equpipoVPart }#{ this._fechaPart.ToString("dd/MM/yyyy") }#{ this._minJugar }#{ this._puestoJugar }#{ this._dorsal }";
+            return $"{ this.nombreJug }#{ this.equpipoLPart }#{ this.equpipoVPart }#{ this.fechaPart.ToString("dd/MM/yyyy") }#{ this.minJugar }#{ this.puestoJugar }#{ this.dorsal }";
 
         }
 

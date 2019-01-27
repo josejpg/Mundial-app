@@ -87,6 +87,7 @@
             this.añoDelMundialToolStripMenuItem.Name = "añoDelMundialToolStripMenuItem";
             this.añoDelMundialToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.añoDelMundialToolStripMenuItem.Text = "Año del mundial";
+            this.añoDelMundialToolStripMenuItem.Click += new System.EventHandler(this.añoDelMundialToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
@@ -228,7 +229,7 @@
             // 
             this.statusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sbHora});
-            this.statusBar.Location = new System.Drawing.Point(0, 942);
+            this.statusBar.Location = new System.Drawing.Point(0, 963);
             this.statusBar.Name = "statusBar";
             this.statusBar.Size = new System.Drawing.Size(1264, 22);
             this.statusBar.TabIndex = 2;
@@ -241,17 +242,19 @@
             this.sbHora.Text = "tbfechaSistema";
             this.sbHora.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
-            // FormPrincipal
+            // formPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 964);
+            this.ClientSize = new System.Drawing.Size(1264, 985);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.msFormPrincipal);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.msFormPrincipal;
             this.MaximizeBox = false;
-            this.Name = "FormPrincipal";
+            this.MaximumSize = new System.Drawing.Size(1280, 1024);
+            this.MinimumSize = new System.Drawing.Size(1280, 1024);
+            this.Name = "formPrincipal";
             this.Text = "FormPrincipal";
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.msFormPrincipal.ResumeLayout(false);

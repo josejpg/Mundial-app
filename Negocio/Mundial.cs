@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 using Entidades;
 
@@ -82,11 +83,6 @@ namespace Negocio
             return new Datos.Usuario().compruebaLogin(user, psw);
         }
 
-        public Usuario CompruebaLogin(string text, object v)
-        {
-            throw new NotImplementedException();
-        }
-
         /// <summary>
         /// Llama a la funcion para crear un nuevo usuario
         /// </summary>
@@ -103,9 +99,9 @@ namespace Negocio
         /// </summary>
         /// <param name="datosUsuario"></param>
         /// <returns></returns>
-        public int updateUsuario(Entidades.Usuario datosUsuario)
+        public int updateUsuario(Entidades.Usuario datosUsuario, PictureBox imagePb)
         {
-            return new Datos.Usuario().updateUsuario(datosUsuario);
+            return new Datos.Usuario().updateUsuario(datosUsuario, imagePb);
         }
 
         /// <summary>
@@ -127,6 +123,47 @@ namespace Negocio
         public int deleteUsuario(Entidades.Usuario datosUsuario)
         {
             return new Datos.Usuario().deleteUsuario(datosUsuario);
+        }
+
+        /// <summary>
+        /// Devuelve un listado de partidos por año o sino todos
+        /// </summary>
+        /// <returns></returns>
+        public List<Entidades.Partido> getPartidos(int anyo)
+        {
+            return new Datos.Partido().getPartidosAnyo(anyo);
+        }
+
+        /// <summary>
+        /// Devuelve una lista de usuarios que coinciden con el filtro
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <param name="equipo"></param>
+        /// <param name="year"></param>
+        /// <returns></returns>
+        public List<Entidades.Jugador> filtraUsuarios(string name, string team, int year)
+        {
+            return new Datos.Jugador().getJugadores(name, team, year);
+        }
+
+        /// <summary>
+        /// Recopera los datos de un jugador concreto
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public DataTable getJugador(string name)
+        {
+            return new Datos.Jugador().getJugador(name);
+        }
+
+        /// <summary>
+        /// Actualiza los datos de un juegador
+        /// </summary>
+        /// <param name="datosJugador"></param>
+        /// <returns></returns>
+        public int updateJugador(Entidades.Jugador datosJugador)
+        {
+            return new Datos.Jugador().updateJugador(datosJugador);
         }
     }
 }

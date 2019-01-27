@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
@@ -88,16 +89,17 @@ namespace Presentacion
                 {
                     mundial = new Mundial();
                     usuario = new Entidades.Usuario();
-                    usuario = mundial.CompruebaLogin(tbUser.Text, utils.MD5Encrypt(tbPassword.Text));
-                    if (usuario.Active == "S") 
+                    usuario = mundial.login(tbUser.Text, utils.MD5Encrypt(tbPassword.Text));
+                    Debug.Write( usuario.ToString() );
+                    if (usuario.active == "S") 
                     {
-                        if (!string.IsNullOrEmpty(usuario.Nick))
+                        if (!string.IsNullOrEmpty(usuario.nick))
                         {
                         
-                            if (usuario.Psw == usuario.Email)
+                            if (usuario.psw == usuario.email)
                             {
                                 MessageBox.Show("Se ha detectado que es la primera vez que entra, por lo que deberá cambiar la contraseña e iniciar sesión otra vez");
-                                formPswRecovery frp = new formPswRecovery(usuario.Nick);
+                                formPswRecovery frp = new formPswRecovery();
                                 frp.ShowDialog();
                             }
                             else
@@ -140,23 +142,14 @@ namespace Presentacion
         }
 
         /// <summary>
-        /// evento del boton recuperar contraseña para inicializar el proceso
+        /// Evento click del enlace para iniciar el proceso de recuperar contraseña
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btRecPass_Click(object sender, EventArgs e)
+        private void lnkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (tbUser.Text != "Usuario" && !string.IsNullOrWhiteSpace(tbUser.Text))
-            {
-                formPswRecovery frp = new formPswRecovery(tbUser.Text);
-                frp.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Debe indicar primero el usuario sobre el que ha olvidado la cotnraseña y después seleccionar la opción ¿Has olvidado la contraseña?");
-                tbUser.Focus();
-            }
+            formPswRecovery frp = new formPswRecovery();
+            frp.ShowDialog();
         }
-
     }
 }

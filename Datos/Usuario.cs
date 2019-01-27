@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -25,7 +26,6 @@ namespace Datos
         /// <returns></returns>
         public List<Entidades.Usuario> getUsuarios()
         {
-
             List<Entidades.Usuario> _listUsuarios = new List<Entidades.Usuario>();
             DataBase _db = new DataBase();
             OracleDataReader _dataSQL;
@@ -52,22 +52,20 @@ namespace Datos
                 // Llamar siempre a Read antes de acceder a los datos
                 while (_dataSQL.Read())
                 {
-
                     _listUsuarios.Add(
                         new Entidades.Usuario
                         {
-                            IdUser = int.Parse(_dataSQL[0].ToString()),
-                            Nick = _dataSQL[1].ToString(),
-                            Psw = _dataSQL[2].ToString(),
-                            Email = _dataSQL[3].ToString(),
-                            Name = _dataSQL[4].ToString(),
-                            Surname = _dataSQL[5].ToString(),
-                            StartDate = (DateTime)_dataSQL[6],
-                            IdRol = int.Parse(_dataSQL[7].ToString()),
-                            Active = _dataSQL[8].ToString()
+                            idUser = int.Parse(_dataSQL[0].ToString()),
+                            nick = _dataSQL[1].ToString(),
+                            psw = _dataSQL[2].ToString(),
+                            email = _dataSQL[3].ToString(),
+                            name = _dataSQL[4].ToString(),
+                            surname = _dataSQL[5].ToString(),
+                            startDate = (DateTime)_dataSQL[6],
+                            idRol = int.Parse(_dataSQL[7].ToString()),
+                            active = _dataSQL[8].ToString()
                         }
                     );
-
                 }
 
                 _dataSQL.Close();
@@ -104,8 +102,9 @@ namespace Datos
                                 NOMBRE_USUARIO_APP,
                                 APELLIDOS_USUARIO_APP,
                                 FECHA_ALTA_USUARIO_APP,
-                                ROL_USUARIO_APP
-                                ACTIVO_USUARIO_APP
+                                ROL_USUARIO_APP,
+                                ACTIVO_USUARIO_APP, 
+                                FOTO_USUARIO_APP
                             FROM 
                                 USUARIO_APP
                             WHERE
@@ -124,18 +123,25 @@ namespace Datos
                 _db.Sql.CommandType = CommandType.Text;
                 _db.Sql.CommandText = _sql;
                 _dataSQL = _db.selectSQL();
+
+                
                 _dataSQL.Read();
-                datosUsuario = new Entidades.Usuario {
-                    IdUser = int.Parse(_dataSQL[0].ToString()),
-                    Nick = _dataSQL[1].ToString(),
-                    Psw = _dataSQL[2].ToString(),
-                    Email = _dataSQL[4].ToString(),
-                    Name = _dataSQL[5].ToString(),
-                    Surname = _dataSQL[6].ToString(),
-                    StartDate = (DateTime)_dataSQL[7],
-                    IdRol = int.Parse(_dataSQL[8].ToString()),
-                    Active = _dataSQL[8].ToString()
+                datosUsuario = new Entidades.Usuario
+                {
+                    idUser =Convert.ToInt32(_dataSQL[0]),
+                    nick = _dataSQL[1].ToString(),
+                    psw = _dataSQL[2].ToString(),
+                    email = _dataSQL[3].ToString(),
+                    name = _dataSQL[4].ToString(),
+                    surname = _dataSQL[5].ToString(),
+                    startDate = (DateTime)_dataSQL[6],
+                    idRol = Convert.ToInt32(_dataSQL[7]),
+                    active = _dataSQL[8].ToString()
                 };
+
+                datosUsuario.avatar = ObjectToByteArray(_dataSQL[9]);
+                _dataSQL.Close();
+
                 _dataSQL.Close();
                 _dataSQL.Dispose();
 
@@ -149,7 +155,6 @@ namespace Datos
                 // Llamar siempre a Close una vez finalizada la lectura
                 _db.closeDB();
             }
-
             return datosUsuario;
         }
 
@@ -158,7 +163,7 @@ namespace Datos
        /// </summary>
        /// <param name="newDatosUsuario"></param>
        /// <returns></returns>
-        public int updateUsuario(Entidades.Usuario newDatosUsuario)
+        public int updateUsuario(Entidades.Usuario newDatosUsuario, PictureBox avatar)
         {
 
             DataBase _db = new DataBase();
@@ -176,20 +181,22 @@ namespace Datos
                             NOMBRE_USUARIO_APP = :newName,
                             APELLIDOS_USUARIO_APP = :newSurname,
                             ROL_USUARIO_APP = :newRol,
-                            ACTIVO_USUARIO_APP = :newActive
+                            ACTIVO_USUARIO_APP = :newActive,
+                            FOTO_USUARIO_APP = :newAvatar
                         WHERE
                             ID_USUARIO_APP = :idUser";
 
                 _db.Sql = _db.DbConnection.CreateCommand();
                 _db.Sql.CommandType = CommandType.Text;
                 _db.Sql.CommandText = _sql;
-                _db.Sql.Parameters.Add(":newPsw", OracleDbType.Varchar2).Value = newDatosUsuario.Psw;
-                _db.Sql.Parameters.Add(":newEmail", OracleDbType.Varchar2).Value = newDatosUsuario.Email;
-                _db.Sql.Parameters.Add(":newName", OracleDbType.Varchar2).Value = newDatosUsuario.Name;
-                _db.Sql.Parameters.Add(":newSurname", OracleDbType.Varchar2).Value = newDatosUsuario.Surname;
-                _db.Sql.Parameters.Add(":newRol", OracleDbType.Int32).Value = newDatosUsuario.IdRol;
-                _db.Sql.Parameters.Add(":newActive", OracleDbType.Varchar2).Value = newDatosUsuario.Active;
-                _db.Sql.Parameters.Add(":idUser", OracleDbType.Varchar2).Value = newDatosUsuario.IdUser;
+                _db.Sql.Parameters.Add(":newPsw", OracleDbType.Varchar2).Value = newDatosUsuario.psw;
+                _db.Sql.Parameters.Add(":newEmail", OracleDbType.Varchar2).Value = newDatosUsuario.email;
+                _db.Sql.Parameters.Add(":newName", OracleDbType.Varchar2).Value = newDatosUsuario.name;
+                _db.Sql.Parameters.Add(":newSurname", OracleDbType.Varchar2).Value = newDatosUsuario.surname;
+                _db.Sql.Parameters.Add(":newRol", OracleDbType.Int32).Value = newDatosUsuario.idRol;
+                _db.Sql.Parameters.Add(":newActive", OracleDbType.Varchar2).Value = newDatosUsuario.active;
+                _db.Sql.Parameters.Add(":newAvatar", OracleDbType.Blob).Value = getBlob(avatar);
+                _db.Sql.Parameters.Add(":idUser", OracleDbType.Varchar2).Value = newDatosUsuario.idUser;
 
                 affectedRows = _db.execSQL();
 
@@ -237,7 +244,6 @@ namespace Datos
                 _db.Sql.Parameters.Add(":nickUser", OracleDbType.Varchar2).Value = nickUser;
 
                 affectedRows = _db.execSQL();
-
             }
             catch (Exception e)
             {
@@ -278,8 +284,8 @@ namespace Datos
                                 APELLIDOS_USUARIO_APP, 
                                 FECHA_ALTA_USUARIO_APP, 
                                 ROL_USUARIO_APP, 
-                                FOTO_USUARIO_APP, 
-                                ACTIVO_USUARIO_APP)
+                                ACTIVO_USUARIO_APP, 
+                                FOTO_USUARIO_APP)
                             VALUES(
                                 USUARIO_APP_SEQ.NEXTVAL, 
                                 :nickUsuario, 
@@ -295,14 +301,14 @@ namespace Datos
                 _db.Sql = _db.DbConnection.CreateCommand();
                 _db.Sql.CommandType = CommandType.Text;
                 _db.Sql.CommandText = _sql;
-                _db.Sql.Parameters.Add(":nickUsuario", OracleDbType.Varchar2).Value = newDatosUsuario.Nick;
-                _db.Sql.Parameters.Add(":pswUsuario", OracleDbType.Varchar2).Value = newDatosUsuario.Psw;
-                _db.Sql.Parameters.Add(":emailUsuario", OracleDbType.Varchar2).Value = newDatosUsuario.Email;
-                _db.Sql.Parameters.Add(":nameUsuario", OracleDbType.Varchar2).Value = newDatosUsuario.Name;
-                _db.Sql.Parameters.Add(":surnameUsuario", OracleDbType.Varchar2).Value = newDatosUsuario.Surname;
-                _db.Sql.Parameters.Add(":startDateUsuario", OracleDbType.Date).Value = newDatosUsuario.StartDate;
-                _db.Sql.Parameters.Add(":idRolUsuario", OracleDbType.Int32).Value = newDatosUsuario.IdRol;
-                _db.Sql.Parameters.Add(":activeUsuario", OracleDbType.Varchar2).Value = newDatosUsuario.Active;
+                _db.Sql.Parameters.Add(":nickUsuario", OracleDbType.Varchar2).Value = newDatosUsuario.nick;
+                _db.Sql.Parameters.Add(":pswUsuario", OracleDbType.Varchar2).Value = newDatosUsuario.psw;
+                _db.Sql.Parameters.Add(":emailUsuario", OracleDbType.Varchar2).Value = newDatosUsuario.email;
+                _db.Sql.Parameters.Add(":nameUsuario", OracleDbType.Varchar2).Value = newDatosUsuario.name;
+                _db.Sql.Parameters.Add(":surnameUsuario", OracleDbType.Varchar2).Value = newDatosUsuario.surname;
+                _db.Sql.Parameters.Add(":startDateUsuario", OracleDbType.Date).Value = newDatosUsuario.startDate;
+                _db.Sql.Parameters.Add(":idRolUsuario", OracleDbType.Int32).Value = newDatosUsuario.idRol;
+                _db.Sql.Parameters.Add(":activeUsuario", OracleDbType.Varchar2).Value = newDatosUsuario.active;
                 _db.Sql.Parameters.Add(":avatarUsuario", OracleDbType.Blob).Value = getBlob(avatar);
 
                 affectedRows = _db.execSQL();
@@ -320,30 +326,7 @@ namespace Datos
 
             return affectedRows;
         }
-        /// <summary>
-        /// Genera un array de bytes desde un PictureBox para que pueda ser insertada en la DB
-        /// </summary>
-        /// <param name="avatar"></param>
-        /// <returns></returns>
-        public static byte[] getBlob( PictureBox avatar )
-        {
-            MemoryStream _memoryStream;
-            byte[] _bytesAvatar;
-
-            try
-            {
-                _memoryStream = new MemoryStream();
-                avatar.Image.Save(_memoryStream, ImageFormat.Jpeg);
-                _bytesAvatar = new byte[_memoryStream.Length];
-                _memoryStream.Position = 0;
-                _memoryStream.Read(_bytesAvatar, 0, _bytesAvatar.Length);
-            }
-            catch (Exception e)
-            {
-                throw new Exception("Error en getBlob():\n" + e.Message);
-            }
-            return _bytesAvatar;
-        }
+        
 
         /// <summary>
         /// Elimina un usuario de la DB
@@ -368,10 +351,9 @@ namespace Datos
                 _db.Sql = _db.DbConnection.CreateCommand();
                 _db.Sql.CommandType = System.Data.CommandType.Text;
                 _db.Sql.CommandText = _sql;
-                _db.Sql.Parameters.Add(":idUser", OracleDbType.Varchar2).Value = datosUsuario.IdUser;
+                _db.Sql.Parameters.Add(":idUser", OracleDbType.Varchar2).Value = datosUsuario.idUser;
 
                 affectedRows = _db.execSQL();
-
             }
             catch (Exception e)
             {
@@ -387,45 +369,45 @@ namespace Datos
         }
 
         /// <summary>
-        /// Recoge y muestra un listado d epartidos según el año
+        /// Genera un array de bytes desde un PictureBox para que pueda ser insertada en la DB
         /// </summary>
-        /// <param name="_year"></param>
+        /// <param name="avatar"></param>
         /// <returns></returns>
-        public List<Entidades.Partido> getPartidosAnyo(int _year)
+        public static byte[] getBlob(PictureBox avatar)
         {
-            return new Datos.Partido().getPartidosAnyo(_year);
+            MemoryStream _memoryStream;
+            byte[] _bytesAvatar;
+
+            try
+            {
+                _memoryStream = new MemoryStream();
+                avatar.Image.Save(_memoryStream, ImageFormat.Jpeg);
+                _bytesAvatar = new byte[_memoryStream.Length];
+                _memoryStream.Position = 0;
+                _memoryStream.Read(_bytesAvatar, 0, _bytesAvatar.Length);
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error en getBlob():\n" + e.Message);
+            }
+            return _bytesAvatar;
         }
 
         /// <summary>
-        /// Devuelve una lista de usuarios que coinciden con el filtro
+        /// Transforma un objeto a un array de byte
         /// </summary>
-        /// <param name="nombre"></param>
-        /// <param name="equipo"></param>
-        /// <param name="year"></param>
+        /// <param name="obj"></param>
         /// <returns></returns>
-        public List<Entidades.Jugador> filtraUsuarios(string name, string team, int year)
+        private byte[] ObjectToByteArray(object obj)
         {
-            return new Datos.Jugador().getJugadores(name,team,year);
-        }
-
-        /// <summary>
-        /// Recopera los datos de un jugador concreto
-        /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        public DataTable getJugador(string name)
-        {
-            return new Datos.Jugador().getJugador(name);
-        }
-
-        /// <summary>
-        /// Actualiza los datos de un juegador
-        /// </summary>
-        /// <param name="datosJugador"></param>
-        /// <returns></returns>
-        public int updateJugador(Entidades.Jugador datosJugador)
-        {
-            return new Datos.Jugador().updateJugador(datosJugador);
+            if (obj == null)
+                return null;
+            BinaryFormatter bf = new BinaryFormatter();
+            using (MemoryStream ms = new MemoryStream())
+            {
+                bf.Serialize(ms, obj);
+                return ms.ToArray();
+            }
         }
     }
 }

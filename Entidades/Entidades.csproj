@@ -50,7 +50,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Equipo.cs" />
-    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Gol.cs" />
     <Compile Include="Jugador.cs" />
     <Compile Include="Jugar.cs" />

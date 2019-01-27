@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -113,7 +114,7 @@ namespace Negocio
             bool result = false;
             foreach (var user in getUsuarios())
             {
-                if (user.Nick == nick)
+                if (user.nick == nick)
                 {
                     result = true;
                     break;
@@ -145,6 +146,23 @@ namespace Negocio
                 MessageBox.Show(e.Message);
             }
             return _imageByte;
+        }
+
+        /// <summary>
+        /// Transforma un objeto a un array de byte
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        byte[] ObjectToByteArray(object obj)
+        {
+            if (obj == null)
+                return null;
+            BinaryFormatter bf = new BinaryFormatter();
+            using (MemoryStream ms = new MemoryStream())
+            {
+                bf.Serialize(ms, obj);
+                return ms.ToArray();
+            }
         }
     }
 

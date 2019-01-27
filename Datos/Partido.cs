@@ -27,7 +27,6 @@ namespace Datos
         /// <returns></returns>
         public List<Entidades.Partido> getPartidosAnyo(int? _year)
         {
-
             List<Entidades.Partido> _listPartidos = new List<Entidades.Partido>();
             DataBase _db = new DataBase();
             OracleDataReader _dataSQL;
@@ -35,7 +34,6 @@ namespace Datos
 
             try
             {
-
                 if( _year == null || 
                     _year == DateTime.Now.Year)
                 {
@@ -62,21 +60,19 @@ namespace Datos
                 // Llamar siempre a Read antes de acceder a los datos
                 while (_dataSQL.Read())
                 {
-
                     _listPartidos.Add(
                         new Entidades.Partido
                         {
-                            EquipoL = _dataSQL[0].ToString(),
-                            EquipoV = _dataSQL[1].ToString(),
-                            Fecha = (DateTime)_dataSQL[2],
-                            Hora = _dataSQL[3].ToString(),
-                            Sede = _dataSQL[4].ToString(),
-                            ResultadoL = Convert.ToInt32(_dataSQL[5]),
-                            ResultadoV = Convert.ToInt32(_dataSQL[6]),
-                            Asistencia = (_dataSQL[7] is DBNull)?0: Convert.ToInt32(_dataSQL[7]),
+                            equipoL = _dataSQL[0].ToString(),
+                            equipoV = _dataSQL[1].ToString(),
+                            fecha = (DateTime)_dataSQL[2],
+                            hora = _dataSQL[3].ToString(),
+                            sede = _dataSQL[4].ToString(),
+                            resultadoL = Convert.ToInt32(_dataSQL[5]),
+                            resultadoV = Convert.ToInt32(_dataSQL[6]),
+                            asistencia = (_dataSQL[7] is DBNull)?0: Convert.ToInt32(_dataSQL[7]),
                         }
                     );
-
                 }
 
                 _dataSQL.Close();
@@ -92,7 +88,6 @@ namespace Datos
                 _db.closeDB();
             }
             return _listPartidos;
-
         }
     }
 }

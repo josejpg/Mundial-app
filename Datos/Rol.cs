@@ -39,15 +39,13 @@ namespace Datos
                 // Llamar siempre a Read antes de acceder a los datos
                 while (_dataSQL.Read())
                 {
-
                     _listRoles.Add(
                         new Entidades.Rol
                         {
-                            IdRol = int.Parse(_dataSQL[0].ToString()),
-                            DescRol = _dataSQL[1].ToString()
+                            idRol = int.Parse(_dataSQL[0].ToString()),
+                            descRol = _dataSQL[1].ToString()
                         }
                     );
-
                 }
 
                 _dataSQL.Close();
@@ -63,7 +61,6 @@ namespace Datos
                 _db.closeDB();
             }
             return _listRoles;
-
         }
     }
 }

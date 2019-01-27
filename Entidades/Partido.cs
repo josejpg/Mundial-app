@@ -11,204 +11,19 @@ namespace Entidades
         /// <summary>
         /// Atributos
         /// </summary>
-        private string _equipoL;
-        private string _equipoV;
-        private DateTime _fecha;
-        private string _hora;
-        private string _sede;
-        private int? _resultadoL;
-        private int? _resultadoV;
-        private int? _asistencia;
-
-        /// <summary>
-        /// Variables
-        /// </summary>
-        public string EquipoL
-        {
-
-            get => this._equipoL;
-
-            set
-            {
-
-                if (!string.IsNullOrWhiteSpace(value.Trim()))
-                {
-
-                    if (value.Length <= 50)
-                    {
-
-                        this._equipoL = value;
-
-                    }
-                    else
-                    {
-
-                        throw new Exception("El equipoL no puede superar los 50 caracteres.");
-
-                    }
-
-
-                }
-                else
-                {
-
-                    throw new Exception("El equipoL no puede ser nulo ni vacío.");
-
-                }
-
-            }
-
-        }
-        public string EquipoV
-        {
-
-            get => this._equipoV;
-
-            set
-            {
-
-                if (!string.IsNullOrWhiteSpace(value.Trim()))
-                {
-
-                    if (value.Length <= 50)
-                    {
-
-                        this._equipoV = value;
-
-                    }
-                    else
-                    {
-
-                        throw new Exception("El equipoV no puede superar los 50 caracteres.");
-
-                    }
-
-
-                }
-                else
-                {
-
-                    throw new Exception("El equipoV no puede ser nulo ni vacío.");
-
-                }
-
-            }
-
-        }
-        public DateTime Fecha
-        {
-
-            get => this._fecha;
-
-            set
-            {
-                DateTime time;
-
-                if (DateTime.TryParse(value.ToString(), out time))
-                {
-
-                    this._fecha = value;
-
-                }
-                else
-                {
-
-                    throw new Exception("La fecha no puede ser nula.");
-
-                }
-
-            }
-
-        }
-        public string Hora
-        {
-
-            get => this._hora;
-
-            set
-            {
-
-                if (value.Length <= 8)
-                {
-
-                    DateTime time;
-
-                    if (DateTime.TryParse(value, out time))
-                    {
-
-                        this._hora = value;
-
-                    }
-                    else
-                    {
-
-                        throw new Exception("La hora no tiene un formato correcto.");
-
-                    }
-
-                }
-                else
-                {
-
-                    throw new Exception("La hora no puede superar los 8 caracteres.");
-
-                }
-            }
-
-        }
-        public string Sede
-        {
-
-            get => this._sede;
-
-            set
-            {
-
-                if (value.Length <= 100)
-                {
-
-                    this._sede = value;
-
-                }
-                else
-                {
-
-                    throw new Exception("El equipoV no puede superar los 100 caracteres.");
-
-                }
-
-            }
-
-        }
-        public int? ResultadoL
-        {
-
-            get => this._resultadoL;
-
-            set => this._resultadoL = value;
-
-        }
-        public int? ResultadoV
-        {
-
-            get => this._resultadoV;
-
-            set => this._resultadoV = value;
-
-        }
-        public int? Asistencia
-        {
-
-            get => this._asistencia;
-
-            set => this._asistencia = value;
-
-        }
+        public string equipoL { get; set; }
+        public string equipoV { get; set; }
+        public DateTime fecha { get; set; }
+        public string hora { get; set; }
+        public string sede { get; set; }
+        public int? resultadoL { get; set; }
+        public int? resultadoV { get; set; }
+        public int? asistencia { get; set; }
 
         public string FechaPartido
         {
 
-            get => $"{ this._fecha.ToString("dd/MM/yyyy") } {  this._hora  }";
+            get => $"{ this.fecha.ToString("dd/MM/yyyy") } {  this.hora  }";
 
         }
 
@@ -221,39 +36,39 @@ namespace Entidades
         public Partido() { }
 
         public Partido(
-            string newEquipoL,
-            string newEquipoV,
-            DateTime newfecha,
-            string newhora,
-            string newSede,
-            int? newResultadoL,
-            int? newResultadoV,
-            int? newAsistencia
+            string equipoL,
+            string equipoV,
+            DateTime fecha,
+            string hora,
+            string sede,
+            int? resultadoL,
+            int? resultadoV,
+            int? asistencia
         )
         {
 
-            EquipoL = newEquipoL;
-            EquipoV = newEquipoV;
-            Fecha = newfecha;
-            Hora = newhora;
-            Sede = newSede;
-            ResultadoL = newResultadoL;
-            ResultadoV = newResultadoV;
-            Asistencia = newAsistencia;
+            this.equipoL = equipoL;
+            this.equipoV = equipoV;
+            this.fecha = fecha;
+            this.hora = hora;
+            this.sede = sede;
+            this.resultadoL = resultadoL;
+            this.resultadoV = resultadoV;
+            this.asistencia = asistencia;
 
         }
 
         public Partido(Partido previousPartidor)
         {
 
-            EquipoL = previousPartidor.EquipoL;
-            EquipoV = previousPartidor.EquipoV;
-            Fecha = previousPartidor.Fecha;
-            Hora = previousPartidor.Hora;
-            Sede = previousPartidor.Sede;
-            ResultadoL = previousPartidor.ResultadoL;
-            ResultadoV = previousPartidor.ResultadoV;
-            Asistencia = previousPartidor.Asistencia;
+            this.equipoL = previousPartidor.equipoL;
+            this.equipoV = previousPartidor.equipoV;
+            this.fecha = previousPartidor.fecha;
+            this.hora = previousPartidor.hora;
+            this.sede = previousPartidor.sede;
+            this.resultadoL = previousPartidor.resultadoL;
+            this.resultadoV = previousPartidor.resultadoV;
+            this.asistencia = previousPartidor.asistencia;
 
         }
 
@@ -263,14 +78,14 @@ namespace Entidades
         ~Partido()
         {
 
-            EquipoL = "";
-            EquipoV = "";
-            Fecha = DateTime.Now;
-            Hora = "00:00:00";
-            Sede = "";
-            ResultadoL = null;
-            ResultadoV = null;
-            Asistencia = null;
+            this.equipoL = "";
+            this.equipoV = "";
+            this.fecha = DateTime.Now;
+            this.hora = "00:00:00";
+            this.sede = "";
+            this.resultadoL = null;
+            this.resultadoV = null;
+            this.asistencia = null;
 
         }
 
@@ -280,7 +95,7 @@ namespace Entidades
         public override string ToString()
         {
 
-            return $"{ this._equipoL }#{ this._equipoV }#{ this._fecha.ToString("dd/MM/yyyy") }#{ this._hora }#{ this._sede }#{ this._resultadoL }#{ this._resultadoV }#{ this._asistencia }";
+            return $"{ this.equipoL }#{ this.equipoV }#{ this.fecha.ToString("dd/MM/yyyy") }#{ this.hora }#{ this.sede }#{ this.resultadoL }#{ this.resultadoV }#{ this.asistencia }";
 
         }
 

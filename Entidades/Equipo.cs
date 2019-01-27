@@ -12,99 +12,9 @@ namespace Entidades
         /// <summary>
         /// Atributos
         /// </summary>
-		private string _nombreEquipo;
-        private string _pais;
-        private string _seleccionador;
-
-        /// <summary>
-        /// Variables
-        /// </summary>
-        public string NombreEquipo
-        {
-
-            get => this._nombreEquipo;
-
-            set
-            {
-
-                if (!string.IsNullOrWhiteSpace(value.Trim()))
-                {
-
-                    if (value.Length <= 50)
-                    {
-
-                        this._nombreEquipo = value;
-
-                    }
-                    else
-                    {
-
-                        throw new Exception("El nombre del equipo no puede superar los 50 caracteres.");
-
-                    }
-
-
-                }
-                else
-                {
-
-                    throw new Exception("El nombre del equipo no puede ser nulo ni vacío.");
-
-                }
-
-            }
-
-        }
-
-        public string Pais
-        {
-
-            get => this._pais;
-
-            set
-            {
-
-                if (value.Length <= 30)
-                {
-
-                    this._pais = value;
-
-                }
-                else
-                {
-
-                    throw new Exception("El país no puede superar los 30 caracteres.");
-
-                }
-
-            }
-
-        }
-
-        public string Seleccionador
-        {
-
-            get => this._seleccionador;
-
-            set
-            {
-
-                if (value.Length <= 50)
-                {
-
-                    this._seleccionador = value;
-
-                }
-                else
-                {
-
-                    throw new Exception("El seleccionador no puede superar los 50 caracteres.");
-
-                }
-
-            }
-
-        }
+		public string nombreEquipo { get; set; }
+        public string pais { get; set; }
+        public string seleccionador { get; set; }
 
         /// <summary>
         /// Constructores
@@ -115,23 +25,23 @@ namespace Entidades
         public Equipo() { }
 
         public Equipo(
-            string equipo,
+            string nombreEquipo,
             string pais,
             string seleccionador)
         {
 
-            NombreEquipo = equipo;
-            Pais = pais;
-            Seleccionador = seleccionador;
+            this.nombreEquipo = nombreEquipo;
+            this.pais = pais;
+            this.seleccionador = seleccionador;
 
         }
 
         public Equipo(Equipo previousEquipo)
         {
 
-            this._nombreEquipo = previousEquipo.NombreEquipo;
-            this._pais = previousEquipo.Pais;
-            this._seleccionador = previousEquipo.Seleccionador;
+            this.nombreEquipo = previousEquipo.nombreEquipo;
+            this.pais = previousEquipo.pais;
+            this.seleccionador = previousEquipo.seleccionador;
 
         }
 
@@ -141,9 +51,9 @@ namespace Entidades
         ~Equipo()
         {
 
-            this._nombreEquipo = "";
-            this._pais = null;
-            this._seleccionador = null;
+            this.nombreEquipo = "";
+            this.pais = null;
+            this.seleccionador = null;
 
         }
 
@@ -154,7 +64,7 @@ namespace Entidades
 
         {
 
-            return $"{ this._nombreEquipo }#{ this._pais }#{ this._seleccionador }";
+            return $"{ this.nombreEquipo }#{ this.pais }#{ this.seleccionador }";
 
         }
 

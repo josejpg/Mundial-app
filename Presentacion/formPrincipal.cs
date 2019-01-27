@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,12 +22,13 @@ namespace Presentacion
     {
 
         private Entidades.Usuario usuario;
-        public static DateTime MundialPreferenciaAnyo { get; set; }
+        public static int yearPreferences { get; set; }
         private string rolTipo;
         private Mundial mundial;
-        private double tiempoSegundos = 0;
-        private double tiempoMinutos = 0;
-        private double tiempoHoras = 0;
+        private DateTime d = DateTime.Now;
+        private double timeSeg = 0;
+        private double timeMin = 0;
+        private double timeHour = 0;
 
         public formPrincipal(Entidades.Usuario usuario)
         {
@@ -36,11 +38,11 @@ namespace Presentacion
             this.rolTipo = "";
             this.FormClosing += FormPrincipal_FormClosing;
             this.CompruebaRolUser();
-            MundialPreferenciaAnyo = DateTime.Now;
+            yearPreferences = DateTime.Now.Year;
 
 
             System.Timers.Timer aTimer = new System.Timers.Timer();
-            aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+            aTimer.Elapsed += new ElapsedEventHandler( OnTimedEvent );
             aTimer.Interval = 1000;
             aTimer.Enabled = true;
 
@@ -49,12 +51,37 @@ namespace Presentacion
         
         private void OnTimedEvent(object source, ElapsedEventArgs e)
         {
-            tiempoSegundos += 1;
+            try
+            {
+                String timeLapsed = "";
+                TimeSpan diffTime = (DateTime.Now - d);
 
-            tiempoMinutos = Math.Round( tiempoSegundos / 60, 0);
-            tiempoHoras = Math.Round(tiempoMinutos / 6, 0);
+                timeSeg = diffTime.Seconds;
+                timeMin = diffTime.Minutes;
+                timeHour = diffTime.Hours;
 
-            sbHora.Text = "Hora del sistema: "+DateTime.Now.ToShortTimeString() +"  |  Tiempo de uso: "+tiempoHoras+":"+tiempoMinutos+":"+tiempoSegundos;
+                if (timeHour > 0)
+                {
+                    timeLapsed += (timeHour > 9) ? timeHour.ToString() : "0" + timeHour.ToString();
+                    timeLapsed += "h ";
+                }
+                if (timeMin > 0)
+                {
+                    timeLapsed += (timeMin > 9) ? timeMin.ToString() : "0" + timeMin.ToString();
+                    timeLapsed += "m ";
+                }
+                if (timeSeg >= 0)
+                {
+                    timeLapsed += (timeSeg > 9) ? timeSeg.ToString() : "0" + timeSeg.ToString();
+                    timeLapsed += "s";
+                }
+                
+                sbHora.Text = "Hora del sistema: " + DateTime.Now.ToShortTimeString() + "  |  Tiempo de uso: " + timeLapsed;
+            }
+            catch(Exception ex)
+            {
+                
+            }
         }
 
         private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
@@ -78,7 +105,7 @@ namespace Presentacion
         private void msFormPrincipalUsuariosInsertar_Click(object sender, EventArgs e)
         {
             //Creamos un formulario formusuariosinsertar que será hijo de formprincipal y lo mostramos.
-            formInsertarUsuariosAPP fui = new formInsertarUsuariosAPP();
+            formInsertarUsuario fui = new formInsertarUsuario();
             fui.MdiParent = this;
             fui.WindowState = FormWindowState.Maximized;
             fui.Show();
@@ -99,9 +126,9 @@ namespace Presentacion
             {
                 foreach (var rol in utils.comboBoxRol())
                 {
-                    if (rol.IdRol == usuario.IdRol)
+                    if (rol.idRol == usuario.idRol)
                     {
-                        this.rolTipo = rol.DescRol;
+                        this.rolTipo = rol.descRol;
                     }
                 }
 
@@ -138,6 +165,14 @@ namespace Presentacion
             acercade.MdiParent = this;
             acercade.WindowState = FormWindowState.Maximized;
             acercade.Show();
+        }
+
+        private void añoDelMundialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formAnyoMundial anyoMundial = new formAnyoMundial();
+            anyoMundial.MdiParent = this;
+            anyoMundial.WindowState = FormWindowState.Maximized;
+            anyoMundial.Show();
         }
     }
 }

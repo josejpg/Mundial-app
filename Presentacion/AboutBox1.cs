@@ -9,21 +9,17 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
-    /// <author>
-    /// Jose Javier Pardines Garcia
-    /// </author>
     partial class AboutBox1 : Form
     {
         public AboutBox1()
         {
             InitializeComponent();
-            this.Text = String.Format("Acerca de {0}", "2º DAM Semipresencial - Examen Mundial");
-            this.labelProductName.Text = "Mundial DAM";
-            this.labelVersion.Text = String.Format("Versión {0}", "1.0");
-            this.labelCopyright.Text = "Copyright © Todos los Derechos Reservados";
-            this.labelCompanyName.Text = "Jose Javier Pardines Garcia";
-            this.textBoxDescription.Text = "Aplicación para el control de mundiales";
-;
+            this.Text = String.Format("Acerca de {0}", AssemblyTitle);
+            this.labelProductName.Text = AssemblyProduct;
+            this.labelVersion.Text = String.Format("Versión {0}", AssemblyVersion);
+            this.labelCopyright.Text = AssemblyCopyright;
+            this.labelCompanyName.Text = AssemblyCompany;
+            this.textBoxDescription.Text = AssemblyDescription;
         }
 
         #region Descriptores de acceso de atributos de ensamblado
@@ -105,10 +101,5 @@ namespace Presentacion
             }
         }
         #endregion
-
-        private void okButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }
