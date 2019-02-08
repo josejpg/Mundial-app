@@ -151,6 +151,7 @@ namespace Presentacion
             txtErrorEmail.Visible = false;
             txtErrorName.Visible = false;
             txtErrorSurname.Visible = false;
+            btnSendForm.Enabled = false;
             try
             {
                 if (!string.IsNullOrWhiteSpace(tbNick.Text) && tbNick.Text.Length <= 50)
@@ -229,13 +230,19 @@ namespace Presentacion
 
                     if( mundial.setNuevoUsuario(user, pbAvatar) > 0 )
                     {
+                        btnSendForm.Enabled = true;
                         MessageBox.Show("El usuario se ha insertado correctamente.");
                     }
                     else
                     {
+                        btnSendForm.Enabled = true;
                         MessageBox.Show("No ha sido posible insertar el usuario. Vuelva a intentarlo en unos momentos.");
                     }
-                    
+
+                }
+                else
+                {
+                    btnSendForm.Enabled = true;
                 }
             }catch( Exception ex)
             {

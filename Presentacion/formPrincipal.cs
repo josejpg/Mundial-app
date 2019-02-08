@@ -21,7 +21,7 @@ namespace Presentacion
     public partial class formPrincipal : Form
     {
 
-        private Entidades.Usuario usuario;
+        public static Entidades.Usuario usuario;
         public static int yearPreferences { get; set; }
         private string rolTipo;
         private Mundial mundial;
@@ -30,11 +30,11 @@ namespace Presentacion
         private double timeMin = 0;
         private double timeHour = 0;
 
-        public formPrincipal(Entidades.Usuario usuario)
+        public formPrincipal(Entidades.Usuario user)
         {
             InitializeComponent();
-            this.usuario = usuario;
-            userToolStripMenuItem.Text = (this.usuario.name + " " + this.usuario.surname).Trim();
+            usuario = user;
+            userToolStripMenuItem.Text = (usuario.name + " " + usuario.surname).Trim();
             this.mundial = new Mundial();
             this.rolTipo = "";
             this.FormClosing += FormPrincipal_FormClosing;
@@ -48,7 +48,6 @@ namespace Presentacion
             aTimer.Enabled = true;
 
         }
-
         
         private void OnTimedEvent(object source, ElapsedEventArgs e)
         {
@@ -206,6 +205,14 @@ namespace Presentacion
             fj.MdiParent = this;
             fj.WindowState = FormWindowState.Maximized;
             fj.Show();
+        }
+
+        private void mostrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formPartidos fp = new formPartidos();
+            fp.MdiParent = this;
+            fp.WindowState = FormWindowState.Maximized;
+            fp.Show();
         }
     }
 }

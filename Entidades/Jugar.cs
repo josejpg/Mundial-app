@@ -5,7 +5,7 @@ namespace Entidades
     /// <author>
     /// Jose Javier Pardines Garcia
     /// </author>
-    class Jugar
+    public class Jugar
     {
 
         /// <summary>

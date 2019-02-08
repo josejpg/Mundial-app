@@ -42,7 +42,6 @@
             this.consultarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.partidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.unPartidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clasificaciónDeUnMundialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,9 +49,9 @@
             this.organizarVerticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.organizarEnHorizontalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar = new System.Windows.Forms.StatusStrip();
             this.sbHora = new System.Windows.Forms.ToolStripStatusLabel();
-            this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msFormPrincipal.SuspendLayout();
             this.statusBar.SuspendLayout();
             this.SuspendLayout();
@@ -161,8 +160,7 @@
             // partidosToolStripMenuItem
             // 
             this.partidosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mostrarToolStripMenuItem,
-            this.modificarToolStripMenuItem2});
+            this.mostrarToolStripMenuItem});
             this.partidosToolStripMenuItem.Name = "partidosToolStripMenuItem";
             this.partidosToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.partidosToolStripMenuItem.Text = "Partidos";
@@ -170,14 +168,9 @@
             // mostrarToolStripMenuItem
             // 
             this.mostrarToolStripMenuItem.Name = "mostrarToolStripMenuItem";
-            this.mostrarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
-            this.mostrarToolStripMenuItem.Text = "Mostrar";
-            // 
-            // modificarToolStripMenuItem2
-            // 
-            this.modificarToolStripMenuItem2.Name = "modificarToolStripMenuItem2";
-            this.modificarToolStripMenuItem2.Size = new System.Drawing.Size(125, 22);
-            this.modificarToolStripMenuItem2.Text = "Modificar";
+            this.mostrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mostrarToolStripMenuItem.Text = "Mostrar y Modificar";
+            this.mostrarToolStripMenuItem.Click += new System.EventHandler(this.mostrarToolStripMenuItem_Click);
             // 
             // informesToolStripMenuItem
             // 
@@ -230,6 +223,13 @@
             this.acercaDeToolStripMenuItem.Text = "Acerca de";
             this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
             // 
+            // userToolStripMenuItem
+            // 
+            this.userToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.userToolStripMenuItem.Name = "userToolStripMenuItem";
+            this.userToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
+            this.userToolStripMenuItem.Text = "User";
+            // 
             // statusBar
             // 
             this.statusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -246,13 +246,6 @@
             this.sbHora.Size = new System.Drawing.Size(82, 17);
             this.sbHora.Text = "Fecha Sistema";
             this.sbHora.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            // 
-            // userToolStripMenuItem
-            // 
-            this.userToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.userToolStripMenuItem.Name = "userToolStripMenuItem";
-            this.userToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
-            this.userToolStripMenuItem.Text = "User";
             // 
             // formPrincipal
             // 
@@ -293,7 +286,6 @@
         private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem partidosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mostrarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem informesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem unPartidoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clasificaciónDeUnMundialToolStripMenuItem;

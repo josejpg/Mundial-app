@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
+    /// <author>
+    /// Jose Javier Pardines Garcia
+    /// </author>
     public partial class formModificarUsuario : Form
     {
         List<Entidades.Rol> aRoles = new List<Entidades.Rol>();
@@ -51,13 +54,13 @@ namespace Presentacion
                     MemoryStream ms = new MemoryStream(aUsers[i].avatar);
                     Image image = Image.FromStream(ms);
                     dgUsers.Rows[i].Cells[0].Value = image;
-                    dgUsers.Rows[i].Height = image.Height;
+                    //dgUsers.Rows[i].Height = image.Height;
                 }
                 else
                 {
                     Bitmap image = new Bitmap(Presentacion.Properties.Resources.user_default);
                     dgUsers.Rows[i].Cells[0].Value = image;
-                    dgUsers.Rows[i].Height = image.Height;
+                    //dgUsers.Rows[i].Height = image.Height;
                 }
             }
         }
@@ -152,6 +155,7 @@ namespace Presentacion
             txtErrorEmail.Visible = false;
             txtErrorName.Visible = false;
             txtErrorSurname.Visible = false;
+            btnSendForm.Enabled = false;
             try
             {
 
@@ -207,12 +211,18 @@ namespace Presentacion
                         setUsers();
                         MessageBox.Show("El usuario se ha modificado correctamente.");
                         gbDatosUsuario.Visible = false;
+                        btnSendForm.Enabled = true;
                     }
                     else
                     {
                         MessageBox.Show("No ha sido posible modificar el usuario. Vuelva a intentarlo en unos momentos.");
+                        btnSendForm.Enabled = true;
                     }
 
+                }
+                else
+                {
+                    btnSendForm.Enabled = true;
                 }
             }
             catch (Exception ex)

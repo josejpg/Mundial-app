@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
+    /// <author>
+    /// Jose Javier Pardines Garcia
+    /// </author>
     public partial class formAnyoMundial : Form
     {
         public formAnyoMundial()
@@ -46,7 +49,7 @@ namespace Presentacion
             try
             {
                 mundial = new Negocio.Mundial();
-                listPartidos = mundial.getPartidos((int)cbYear.SelectedItem);
+                listPartidos = mundial.getPartidosAnyo((int)cbYear.SelectedItem);
                 dataGridView1.DataSource = listPartidos;
             }
             catch (Exception ex)

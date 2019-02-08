@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
+    /// <author>
+    /// Jose Javier Pardines Garcia
+    /// </author>
     public partial class formEliminarUsuario : Form
     {
         List<Entidades.Rol> aRoles = new List<Entidades.Rol>();

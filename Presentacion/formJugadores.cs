@@ -12,6 +12,9 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
+    /// <author>
+    /// Jose Javier Pardines Garcia
+    /// </author>
     public partial class formJugadores : Form
     {
         List<Entidades.Jugador> aPlayers = new List<Entidades.Jugador>();
@@ -35,6 +38,10 @@ namespace Presentacion
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            btnSearch.Enabled = false;
+            tbNameFiltro.Enabled = false;
+            cbTeamFiltro.Enabled = false;
+            cbYearFiltro.Enabled = false;
             getPlayers();
         }
         private void btnCancelForm_Click(object sender, EventArgs e)
@@ -125,8 +132,8 @@ namespace Presentacion
                     player.equipoJugador = listEquipos.Find(datosEquipo => datosEquipo.nombreEquipo == cbTeam.SelectedItem.ToString()).nombreEquipo;
                     player.fechaNac = dtFechaNac.Value;
                     player.avatar = Negocio.utils.getBloob(pbAvatar);
-
-                    if (mundial.updateJugador(player) > 0)
+                    int result = mundial.updateJugador(player);
+                    if (result > 0 || result == -1)
                     {
                         getPlayers();
                         MessageBox.Show("El jugador se ha modificado correctamente.");
@@ -183,6 +190,10 @@ namespace Presentacion
                     }
                 }
             }
+            btnSearch.Enabled = true;
+            tbNameFiltro.Enabled = true;
+            cbTeamFiltro.Enabled = true;
+            cbYearFiltro.Enabled = true;
         }
 
         private void getEquipos()
@@ -238,6 +249,11 @@ namespace Presentacion
                     pbAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
             }
+        }
+
+        private void gbDataPlayer_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

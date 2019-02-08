@@ -155,9 +155,18 @@ namespace Negocio
         /// Devuelve un listado de partidos por año o sino todos
         /// </summary>
         /// <returns></returns>
-        public List<Entidades.Partido> getPartidos(int anyo)
+        public List<Entidades.Partido> getPartidosAnyo(int anyo)
         {
             return new Datos.Partido().getPartidosAnyo(anyo);
+        }
+
+        /// <summary>
+        /// Devuelve un listado de partidos por el año, el nombre o ambos
+        /// </summary>
+        /// <returns></returns>
+        public List<Entidades.Partido> getPartidos(string name,int? _year)
+        {
+            return new Datos.Partido().getPartidos(name,_year);
         }
 
         /// <summary>
@@ -199,6 +208,15 @@ namespace Negocio
         public List<Entidades.Equipo> getEquipos()
         {
             return new Datos.Jugador().getEquipos();
+        }
+
+        /// <summary>
+        /// Devuelve una lista de usuarios que coinciden con el filtro
+        /// </summary>
+        /// <returns></returns>
+        public List<Entidades.Jugar> getJugadoresPorPartido(string team, DateTime date)
+        {
+            return new Datos.Jugar().getJugadoresPartido(team, date);
         }
     }
 }

@@ -178,6 +178,7 @@
             this.gbDataPlayer.TabStop = false;
             this.gbDataPlayer.Text = "Datos Jugador";
             this.gbDataPlayer.Visible = false;
+            this.gbDataPlayer.Enter += new System.EventHandler(this.gbDataPlayer_Enter);
             // 
             // txtErrorTeam
             // 

@@ -82,7 +82,7 @@ namespace Datos
         /// </summary>
         public void startDB()
         {
-            string strConexion = string.Format("User Id={0}; Password={1}; Data Source={2}:{3}/{4};", this._userDB, this._pswDB, this._hostDB, this._portDB, this._dbDB);
+            string strConexion = string.Format("User Id={0}; Password={1}; Data Source={2}:{3}/{4}", this._userDB, this._pswDB, this._hostDB, this._portDB, this._dbDB);
             this._dbConection = new OracleConnection(strConexion);
             this._dbConection.ConnectionString = strConexion;
             this._dbConection.Open();
@@ -161,6 +161,10 @@ namespace Datos
             catch (InvalidOperationException e)
             {
                 throw new InvalidOperationException("Error al ejecutar la sql:\n" + this._sql + "\n\nEl error devuelto es: " + e.ToString());
+            }
+            catch(Exception e)
+            {
+                throw new Exception(e.Message);
             }
 
             return affectedRows;

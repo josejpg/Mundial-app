@@ -61,7 +61,7 @@ namespace Datos
                     nombre = _dataSQL[1].ToString(),
                     direccion = _dataSQL[2].ToString(),
                     puestoHab = _dataSQL[3].ToString(),
-                    fechaNac = (_dataSQL[4] is DBNull) ? DateTime.Now : (DateTime)_dataSQL[3],
+                    fechaNac = (_dataSQL[4] is DBNull) ? DateTime.Now : (DateTime)_dataSQL[4],
                     equipoJugador = _dataSQL[5].ToString()
                 };
 
@@ -141,7 +141,7 @@ namespace Datos
                     _where += $@"e.EQUIPO LIKE UPPER('%{ _team }%')";
                 }
 
-                if (_year != null && _year > 0)
+                if (_year != null && _year > 0 && _year != DateTime.Now.Year)
                 {
                     _where = (_where.Equals(String.Empty)) ? " WHERE " : " AND ";
                     _where += $@"TO_CHAR(p.FECHA, 'yyyy') = '{ _year }'";
@@ -186,7 +186,7 @@ namespace Datos
                         nombre = _dataSQL[1].ToString(),
                         direccion = _dataSQL[2].ToString(),
                         puestoHab = _dataSQL[3].ToString(),
-                        fechaNac = (_dataSQL[4] is DBNull) ? DateTime.Now : (DateTime)_dataSQL[3],
+                        fechaNac = (_dataSQL[4] is DBNull) ? DateTime.Now : (DateTime)_dataSQL[4],
                         equipoJugador = _dataSQL[5].ToString()
                     };
                     jugador.avatar = ((_dataSQL[0] is DBNull) ? null : (byte[])_dataSQL[0]);
@@ -214,22 +214,21 @@ namespace Datos
         public int updateJugador(Entidades.Jugador datosJugador)
         {
             DataBase _db = new DataBase();
-            OracleCommand _execSQL;
             int affectedRows = 0;
 
             try
             {
                 _db.startDB();
-                _execSQL = _db.DbConnection.CreateCommand();
-                _execSQL.BindByName = true;
-                _execSQL.CommandType = CommandType.StoredProcedure;
-                _execSQL.CommandText = "CONSULTAS.GRABAR_JUGADOR";
-                _execSQL.Parameters.Add("v_nombre", OracleDbType.Varchar2, datosJugador.nombre, ParameterDirection.Input);
-                _execSQL.Parameters.Add("v_equipo", OracleDbType.Varchar2, datosJugador.equipoJugador, ParameterDirection.Input);
-                _execSQL.Parameters.Add("v_direccion", OracleDbType.Varchar2, datosJugador.direccion, ParameterDirection.Input);
-                _execSQL.Parameters.Add("v_puesto_h", OracleDbType.Varchar2, datosJugador.puestoHab, ParameterDirection.Input);
-                _execSQL.Parameters.Add("v_fec_na", OracleDbType.Date, datosJugador.fechaNac, ParameterDirection.Input);
-                _execSQL.Parameters.Add("v_foto", OracleDbType.Blob, datosJugador.avatar, ParameterDirection.Input);
+                _db.Sql = _db.DbConnection.CreateCommand();
+                _db.Sql.BindByName = true;
+                _db.Sql.CommandType = CommandType.StoredProcedure;
+                _db.Sql.CommandText = "CONSULTAS.GRABAR_JUGADOR";
+                _db.Sql.Parameters.Add("v_nombre", OracleDbType.Varchar2, datosJugador.nombre, ParameterDirection.Input);
+                _db.Sql.Parameters.Add("v_equipo", OracleDbType.Varchar2, datosJugador.equipoJugador, ParameterDirection.Input);
+                _db.Sql.Parameters.Add("v_direccion", OracleDbType.Varchar2, datosJugador.direccion, ParameterDirection.Input);
+                _db.Sql.Parameters.Add("v_puesto_h", OracleDbType.Varchar2, datosJugador.puestoHab, ParameterDirection.Input);
+                _db.Sql.Parameters.Add("v_fec_na", OracleDbType.Date, datosJugador.fechaNac, ParameterDirection.Input);
+                _db.Sql.Parameters.Add("v_foto", OracleDbType.Blob, datosJugador.avatar, ParameterDirection.Input);
 
                 affectedRows = _db.execSQL();
                 
