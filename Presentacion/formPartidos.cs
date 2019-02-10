@@ -67,11 +67,21 @@ namespace Presentacion
             }
         }
 
+        /// <summary>
+        /// Cuando se hace click en una celda se activa el botón de modificar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             this.btnModificar.Visible = true;
         }
 
+        /// <summary>
+        /// Envía la información del partido a una nueva ventana para ser editado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModificar_Click(object sender, EventArgs e)
         {
             Entidades.Partido datosPartido;

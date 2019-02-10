@@ -166,5 +166,51 @@ namespace Datos
             }
             return _listPartidos;
         }
+
+        public int updateResultadoPartido(Entidades.Partido datosPartido)
+        {
+            DataBase _db = new DataBase();
+            string _sql;
+            int affectedRows = 0;
+
+            try
+            {
+                _db.startDB();
+                _sql = $@"UPDATE
+                            PARTIDO
+                        SET 
+                            RESULTADO_L = :resultadoL,
+                            RESULTADO_V = :resultadoV
+                        WHERE
+                            EQUIPO_L = :equipoL
+                        AND
+                            EQUIPO_V = :equipoV
+                        AND
+                            FECHA = :fecha";
+
+                _db.Sql = _db.DbConnection.CreateCommand();
+                _db.Sql.CommandType = CommandType.Text;
+                _db.Sql.CommandText = _sql;
+                _db.Sql.Parameters.Add(":resultadoL", OracleDbType.Varchar2).Value = datosPartido.resultadoL;
+                _db.Sql.Parameters.Add(":resultadoV", OracleDbType.Varchar2).Value = datosPartido.resultadoV;
+                _db.Sql.Parameters.Add(":equipoL", OracleDbType.Varchar2).Value = datosPartido.equipoL;
+                _db.Sql.Parameters.Add(":equipoV", OracleDbType.Varchar2).Value = datosPartido.equipoV;
+                _db.Sql.Parameters.Add(":fecha", OracleDbType.Date).Value = datosPartido.fecha;
+
+                affectedRows = _db.execSQL();
+
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error en updateResultadoPartido(): " + e.Message);
+            }
+            finally
+            {
+                // Llamar siempre a Close una vez finalizada la lectura
+                _db.closeDB();
+            }
+
+            return affectedRows;
+        }
     }
 }

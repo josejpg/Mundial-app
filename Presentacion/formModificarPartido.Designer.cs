@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gbnuevoGolLoc = new System.Windows.Forms.GroupBox();
+            this.gbNuevoGolLoc = new System.Windows.Forms.GroupBox();
             this.btCancelarGolLocal = new System.Windows.Forms.Button();
             this.btAceptarGolLocal = new System.Windows.Forms.Button();
             this.tbMinutoGolLocal = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.cbJugadoresLocal = new System.Windows.Forms.ComboBox();
-            this.gbnuevoGolVis = new System.Windows.Forms.GroupBox();
+            this.gbNuevoGolVis = new System.Windows.Forms.GroupBox();
             this.btCancelarGolVisitante = new System.Windows.Forms.Button();
             this.btAceptarGolVisitante = new System.Windows.Forms.Button();
             this.tbMinutoGolVisitante = new System.Windows.Forms.TextBox();
@@ -43,6 +43,7 @@
             this.label31 = new System.Windows.Forms.Label();
             this.cbJugadoresVisitante = new System.Windows.Forms.ComboBox();
             this.gbModificarPartido = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -95,10 +96,10 @@
             this.lblResultado = new System.Windows.Forms.Label();
             this.lblSede = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.gbnuevoGolLoc.SuspendLayout();
-            this.gbnuevoGolVis.SuspendLayout();
+            this.gbNuevoGolLoc.SuspendLayout();
+            this.gbNuevoGolVis.SuspendLayout();
             this.gbModificarPartido.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgGolesVisitante)).BeginInit();
             this.groupBox9.SuspendLayout();
@@ -110,25 +111,24 @@
             this.gbEquipoVisitante.SuspendLayout();
             this.gbEquipoLocal.SuspendLayout();
             this.gbDatosPartido.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // gbnuevoGolLoc
+            // gbNuevoGolLoc
             // 
-            this.gbnuevoGolLoc.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.gbnuevoGolLoc.Controls.Add(this.btCancelarGolLocal);
-            this.gbnuevoGolLoc.Controls.Add(this.btAceptarGolLocal);
-            this.gbnuevoGolLoc.Controls.Add(this.tbMinutoGolLocal);
-            this.gbnuevoGolLoc.Controls.Add(this.label32);
-            this.gbnuevoGolLoc.Controls.Add(this.label29);
-            this.gbnuevoGolLoc.Controls.Add(this.cbJugadoresLocal);
-            this.gbnuevoGolLoc.Location = new System.Drawing.Point(19, 827);
-            this.gbnuevoGolLoc.Name = "gbnuevoGolLoc";
-            this.gbnuevoGolLoc.Size = new System.Drawing.Size(369, 125);
-            this.gbnuevoGolLoc.TabIndex = 21;
-            this.gbnuevoGolLoc.TabStop = false;
-            this.gbnuevoGolLoc.Text = "Añadir nuevo gol en equipo local";
-            this.gbnuevoGolLoc.Visible = false;
+            this.gbNuevoGolLoc.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gbNuevoGolLoc.Controls.Add(this.btCancelarGolLocal);
+            this.gbNuevoGolLoc.Controls.Add(this.btAceptarGolLocal);
+            this.gbNuevoGolLoc.Controls.Add(this.tbMinutoGolLocal);
+            this.gbNuevoGolLoc.Controls.Add(this.label32);
+            this.gbNuevoGolLoc.Controls.Add(this.label29);
+            this.gbNuevoGolLoc.Controls.Add(this.cbJugadoresLocal);
+            this.gbNuevoGolLoc.Location = new System.Drawing.Point(19, 827);
+            this.gbNuevoGolLoc.Name = "gbNuevoGolLoc";
+            this.gbNuevoGolLoc.Size = new System.Drawing.Size(369, 125);
+            this.gbNuevoGolLoc.TabIndex = 21;
+            this.gbNuevoGolLoc.TabStop = false;
+            this.gbNuevoGolLoc.Text = "Añadir nuevo gol en equipo local";
+            this.gbNuevoGolLoc.Visible = false;
             // 
             // btCancelarGolLocal
             // 
@@ -138,6 +138,7 @@
             this.btCancelarGolLocal.TabIndex = 7;
             this.btCancelarGolLocal.Text = "Cancelar";
             this.btCancelarGolLocal.UseVisualStyleBackColor = true;
+            this.btCancelarGolLocal.Click += new System.EventHandler(this.btCancelarGolLocal_Click);
             // 
             // btAceptarGolLocal
             // 
@@ -147,6 +148,7 @@
             this.btAceptarGolLocal.TabIndex = 6;
             this.btAceptarGolLocal.Text = "Aceptar";
             this.btAceptarGolLocal.UseVisualStyleBackColor = true;
+            this.btAceptarGolLocal.Click += new System.EventHandler(this.btAceptarGolLocal_Click);
             // 
             // tbMinutoGolLocal
             // 
@@ -181,22 +183,22 @@
             this.cbJugadoresLocal.Size = new System.Drawing.Size(306, 21);
             this.cbJugadoresLocal.TabIndex = 0;
             // 
-            // gbnuevoGolVis
+            // gbNuevoGolVis
             // 
-            this.gbnuevoGolVis.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.gbnuevoGolVis.Controls.Add(this.btCancelarGolVisitante);
-            this.gbnuevoGolVis.Controls.Add(this.btAceptarGolVisitante);
-            this.gbnuevoGolVis.Controls.Add(this.tbMinutoGolVisitante);
-            this.gbnuevoGolVis.Controls.Add(this.label30);
-            this.gbnuevoGolVis.Controls.Add(this.label31);
-            this.gbnuevoGolVis.Controls.Add(this.cbJugadoresVisitante);
-            this.gbnuevoGolVis.Location = new System.Drawing.Point(880, 827);
-            this.gbnuevoGolVis.Name = "gbnuevoGolVis";
-            this.gbnuevoGolVis.Size = new System.Drawing.Size(364, 125);
-            this.gbnuevoGolVis.TabIndex = 20;
-            this.gbnuevoGolVis.TabStop = false;
-            this.gbnuevoGolVis.Text = "Añadir nuevo gol en equipo visitante";
-            this.gbnuevoGolVis.Visible = false;
+            this.gbNuevoGolVis.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gbNuevoGolVis.Controls.Add(this.btCancelarGolVisitante);
+            this.gbNuevoGolVis.Controls.Add(this.btAceptarGolVisitante);
+            this.gbNuevoGolVis.Controls.Add(this.tbMinutoGolVisitante);
+            this.gbNuevoGolVis.Controls.Add(this.label30);
+            this.gbNuevoGolVis.Controls.Add(this.label31);
+            this.gbNuevoGolVis.Controls.Add(this.cbJugadoresVisitante);
+            this.gbNuevoGolVis.Location = new System.Drawing.Point(880, 827);
+            this.gbNuevoGolVis.Name = "gbNuevoGolVis";
+            this.gbNuevoGolVis.Size = new System.Drawing.Size(364, 125);
+            this.gbNuevoGolVis.TabIndex = 20;
+            this.gbNuevoGolVis.TabStop = false;
+            this.gbNuevoGolVis.Text = "Añadir nuevo gol en equipo visitante";
+            this.gbNuevoGolVis.Visible = false;
             // 
             // btCancelarGolVisitante
             // 
@@ -206,6 +208,7 @@
             this.btCancelarGolVisitante.TabIndex = 7;
             this.btCancelarGolVisitante.Text = "Cancelar";
             this.btCancelarGolVisitante.UseVisualStyleBackColor = true;
+            this.btCancelarGolVisitante.Click += new System.EventHandler(this.btCancelarGolVisitante_Click);
             // 
             // btAceptarGolVisitante
             // 
@@ -215,6 +218,7 @@
             this.btAceptarGolVisitante.TabIndex = 6;
             this.btAceptarGolVisitante.Text = "Aceptar";
             this.btAceptarGolVisitante.UseVisualStyleBackColor = true;
+            this.btAceptarGolVisitante.Click += new System.EventHandler(this.btAceptarGolVisitante_Click);
             // 
             // tbMinutoGolVisitante
             // 
@@ -295,6 +299,16 @@
             this.gbModificarPartido.Size = new System.Drawing.Size(1226, 788);
             this.gbModificarPartido.TabIndex = 19;
             this.gbModificarPartido.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Presentacion.Properties.Resources.CampoMedidor;
+            this.pictureBox1.Location = new System.Drawing.Point(401, 151);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(445, 592);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 86;
+            this.pictureBox1.TabStop = false;
             // 
             // label28
             // 
@@ -598,6 +612,7 @@
             this.dtgGolesVisitante.ReadOnly = true;
             this.dtgGolesVisitante.Size = new System.Drawing.Size(349, 150);
             this.dtgGolesVisitante.TabIndex = 4;
+            this.dtgGolesVisitante.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgGolesVisitante_CellContentClick);
             // 
             // btAddGolesVisitante
             // 
@@ -607,6 +622,7 @@
             this.btAddGolesVisitante.TabIndex = 4;
             this.btAddGolesVisitante.Text = "+";
             this.btAddGolesVisitante.UseVisualStyleBackColor = true;
+            this.btAddGolesVisitante.Click += new System.EventHandler(this.btAddGolesVisitante_Click);
             // 
             // btDeleteGolesVisitante
             // 
@@ -616,6 +632,7 @@
             this.btDeleteGolesVisitante.TabIndex = 3;
             this.btDeleteGolesVisitante.Text = "-";
             this.btDeleteGolesVisitante.UseVisualStyleBackColor = true;
+            this.btDeleteGolesVisitante.Click += new System.EventHandler(this.btDeleteGolesVisitante_Click);
             // 
             // groupBox9
             // 
@@ -640,6 +657,7 @@
             this.dtgGolesLocal.ReadOnly = true;
             this.dtgGolesLocal.Size = new System.Drawing.Size(354, 150);
             this.dtgGolesLocal.TabIndex = 3;
+            this.dtgGolesLocal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgGolesLocal_CellContentClick);
             // 
             // btDeleteGolesLocal
             // 
@@ -649,6 +667,7 @@
             this.btDeleteGolesLocal.TabIndex = 2;
             this.btDeleteGolesLocal.Text = "-";
             this.btDeleteGolesLocal.UseVisualStyleBackColor = true;
+            this.btDeleteGolesLocal.Click += new System.EventHandler(this.btDeleteGolesLocal_Click);
             // 
             // btAddGolesLocal
             // 
@@ -658,6 +677,7 @@
             this.btAddGolesLocal.TabIndex = 1;
             this.btAddGolesLocal.Text = "+";
             this.btAddGolesLocal.UseVisualStyleBackColor = true;
+            this.btAddGolesLocal.Click += new System.EventHandler(this.btAddGolesLocal_Click);
             // 
             // groupBox8
             // 
@@ -819,34 +839,25 @@
             this.lblFecha.TabIndex = 4;
             this.lblFecha.Text = "Fecha";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Presentacion.Properties.Resources.CampoMedidor;
-            this.pictureBox1.Location = new System.Drawing.Point(401, 151);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(445, 592);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 86;
-            this.pictureBox1.TabStop = false;
-            // 
             // formModificarPartido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 985);
-            this.Controls.Add(this.gbnuevoGolLoc);
-            this.Controls.Add(this.gbnuevoGolVis);
+            this.Controls.Add(this.gbNuevoGolLoc);
+            this.Controls.Add(this.gbNuevoGolVis);
             this.Controls.Add(this.gbModificarPartido);
             this.MaximumSize = new System.Drawing.Size(1280, 1024);
             this.MinimumSize = new System.Drawing.Size(1280, 1024);
             this.Name = "formModificarPartido";
             this.Text = "formModificarPartido";
-            this.gbnuevoGolLoc.ResumeLayout(false);
-            this.gbnuevoGolLoc.PerformLayout();
-            this.gbnuevoGolVis.ResumeLayout(false);
-            this.gbnuevoGolVis.PerformLayout();
+            this.gbNuevoGolLoc.ResumeLayout(false);
+            this.gbNuevoGolLoc.PerformLayout();
+            this.gbNuevoGolVis.ResumeLayout(false);
+            this.gbNuevoGolVis.PerformLayout();
             this.gbModificarPartido.ResumeLayout(false);
             this.gbModificarPartido.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgGolesVisitante)).EndInit();
             this.groupBox9.ResumeLayout(false);
@@ -861,21 +872,20 @@
             this.gbEquipoLocal.PerformLayout();
             this.gbDatosPartido.ResumeLayout(false);
             this.gbDatosPartido.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox gbnuevoGolLoc;
+        private System.Windows.Forms.GroupBox gbNuevoGolLoc;
         private System.Windows.Forms.Button btCancelarGolLocal;
         private System.Windows.Forms.Button btAceptarGolLocal;
         private System.Windows.Forms.TextBox tbMinutoGolLocal;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.ComboBox cbJugadoresLocal;
-        private System.Windows.Forms.GroupBox gbnuevoGolVis;
+        private System.Windows.Forms.GroupBox gbNuevoGolVis;
         private System.Windows.Forms.Button btCancelarGolVisitante;
         private System.Windows.Forms.Button btAceptarGolVisitante;
         private System.Windows.Forms.TextBox tbMinutoGolVisitante;

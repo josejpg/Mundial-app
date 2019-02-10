@@ -214,5 +214,13 @@ namespace Presentacion
             fp.WindowState = FormWindowState.Maximized;
             fp.Show();
         }
+
+        private void clasificaciónDeUnMundialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formReportMundial frm = new formReportMundial();
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
     }
 }

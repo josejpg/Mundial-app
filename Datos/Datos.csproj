@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataBase.cs" />
+    <Compile Include="Gol.cs" />
     <Compile Include="Jugador.cs" />
     <Compile Include="Jugar.cs" />
     <Compile Include="Partido.cs" />

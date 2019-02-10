@@ -32,38 +32,33 @@ namespace Datos
 
             try
             {
-                _sql = $@"SELECT DISTINCT 
-                                j.NOMBRE_JUG, 
-                                j.MIN_JUGAR, 
-                                j.PUESTO_JUGAR, 
-                                j.DORSAL
-                            FROM 
-                                jugador jug, , 
-                            LEFT JOIN 
-                                equipos e 
-                                ON 
-                                    jug.EQUIPO_JUGADOR = e.EQUIPO
-                            LEFT JOIN 
-                                jugar j 
-                                ON 
-                                    jug.NOMBRE = j.NOMBRE_JUG
-                            LEFT JOIN 
-                               partido p
-                                ON 
-                                    jug.NOMBRE = j.NOMBRE_JUG
-                            LEFT JOIN 
-                               partido p 
-                                ON 
-                                    j.EQUIPO_L_PART = p.EQUIPO_L
-                                OR 
-                                    j.EQUIPO_V_PART = p.EQUIPO_V
-                            WHERE  
+                _sql = $@"SELECT 
+                            DISTINCT j.NOMBRE_JUG, 
+                            j.MIN_JUGAR, 
+                            j.PUESTO_JUGAR, 
+                            j.DORSAL
+                        FROM 
+                            JUGAR j
+                        LEFT JOIN 
+                            PARTIDO p
+                            ON 
+                                j.EQUIPO_L_PART = p.EQUIPO_L
                             AND 
-                                p.FECHA = '{ date.ToString( "dd/MM/yy" ) }'
-                            AND 
-                                e.EQUIPO like upper('%{ name }%')
-                            ORDER BY
-                                j.MIN_JUGAR DESC";
+                                j.EQUIPO_V_PART = p.EQUIPO_V
+                        LEFT JOIN 
+                            JUGADOR jug 
+                            ON 
+                                jug.NOMBRE = j.NOMBRE_JUG
+                        LEFT JOIN 
+                            EQUIPOS e 
+                            ON 
+                                jug.EQUIPO_JUGADOR = e.EQUIPO
+                        WHERE   
+                            p.FECHA = '{ date.ToString( "dd/MM/yy" ) }'
+                        AND 
+                            e.EQUIPO = upper('{ name }')
+                        ORDER BY
+                            j.MIN_JUGAR DESC";
 
                 _db.startDB();
                 _db.Sql = _db.DbConnection.CreateCommand();

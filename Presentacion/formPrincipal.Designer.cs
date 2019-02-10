@@ -168,7 +168,7 @@
             // mostrarToolStripMenuItem
             // 
             this.mostrarToolStripMenuItem.Name = "mostrarToolStripMenuItem";
-            this.mostrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mostrarToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.mostrarToolStripMenuItem.Text = "Mostrar y Modificar";
             this.mostrarToolStripMenuItem.Click += new System.EventHandler(this.mostrarToolStripMenuItem_Click);
             // 
@@ -192,6 +192,7 @@
             this.clasificaciónDeUnMundialToolStripMenuItem.Name = "clasificaciónDeUnMundialToolStripMenuItem";
             this.clasificaciónDeUnMundialToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.clasificaciónDeUnMundialToolStripMenuItem.Text = "Clasificación de un mundial";
+            this.clasificaciónDeUnMundialToolStripMenuItem.Click += new System.EventHandler(this.clasificaciónDeUnMundialToolStripMenuItem_Click);
             // 
             // ventanaToolStripMenuItem
             // 

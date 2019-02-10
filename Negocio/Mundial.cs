@@ -192,7 +192,7 @@ namespace Negocio
         }
 
         /// <summary>
-        /// Actualiza los datos de un juegador
+        /// Actualiza los datos de un jugador
         /// </summary>
         /// <param name="datosJugador"></param>
         /// <returns></returns>
@@ -211,12 +211,53 @@ namespace Negocio
         }
 
         /// <summary>
-        /// Devuelve una lista de usuarios que coinciden con el filtro
+        /// Devuelve una lista de jugadores que coinciden con el filtro
         /// </summary>
+        /// <param name="team"></param>
+        /// <param name="date"></param>
         /// <returns></returns>
         public List<Entidades.Jugar> getJugadoresPorPartido(string team, DateTime date)
         {
             return new Datos.Jugar().getJugadoresPartido(team, date);
+        }
+
+        /// <summary>
+        /// Devuelve una lista de los goles que coinciden con el filtro
+        /// </summary>
+        /// <param name="team"></param>
+        /// <param name="date"></param>
+        /// <returns></returns>
+        public List<Entidades.Gol> getGolesPartido(string team, DateTime date)
+        {
+            return new Datos.Gol().getGoles(team, date);
+        }
+
+        /// <summary>
+        /// funcion para cambiar el resultado del partido despues de que hayamos modificado un gol
+        /// </summary>
+        /// <param name="pe"></param>
+        /// <param name="isEquipoLocal"></param>
+        /// <returns></returns>
+        public int updateResultadoPartido(Entidades.Partido datosPartido)
+        {
+            return new Datos.Partido().updateResultadoPartido(datosPartido);
+        }
+
+        /// <summary>
+        /// Elimina un gol del resultado
+        /// </summary>
+        /// <returns></returns>
+        public int removeGol(Entidades.Gol datosGol)
+        {
+            return new Datos.Gol().removeGol(datosGol);
+        }
+        /// <summary>
+        /// Añade un gol del resultado
+        /// </summary>
+        /// <returns></returns>
+        public int addGol(Entidades.Gol datosGol)
+        {
+            return new Datos.Gol().addGol(datosGol);
         }
     }
 }
